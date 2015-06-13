@@ -88,6 +88,16 @@
     [urlReq setTimeoutInterval:20];
     NSURLSessionUploadTask *upLoadTask = [session uploadTaskWithRequest:urlReq fromData:data completionHandler:handler];
     [upLoadTask resume];
-    
+}
+
++(UIView*)getMaxCutLine:(CGPoint)frame{
+    UIView *_view = [[UIView alloc]initWithFrame:CGRectMake(frame.x, frame.y, SCREEN_WIDTH, 5)];
+    _view.backgroundColor = GRAY;
+    return  _view;
+}
++(UIView*)getMinCutLine:(CGPoint)frame{
+    UIView *_view = [[UIView alloc]initWithFrame:CGRectMake(frame.x, frame.y, SCREEN_WIDTH, 1)];
+    _view.backgroundColor = GRAY;
+    return  _view;
 }
 @end

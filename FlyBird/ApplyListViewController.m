@@ -8,6 +8,7 @@
 
 #import "ApplyListViewController.h"
 #import "FlyBirdTool.h"
+#import "ApplyListModel.h"
 
 @interface ApplyListViewController ()<UITableViewDataSource,UITabBarDelegate>{
     UITableView *_tableView;
@@ -23,7 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self request:99];
     SETBACKG;
+    _itemList = [[NSMutableArray alloc]init];
     UIImage * apply =[UIImage imageNamed:@"apply.png"];
     UIImage * applyS =[UIImage imageNamed:@"applyS.png"];
     apply = [apply imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
@@ -87,18 +90,23 @@
 -(void)tabSelect:(UIButton *)btn{
     if(btn.tag == 1){
         _downLineView.frame = CGRectMake(10, 25, btnWidth, 5);
+        [self request:99];
     }
     if(btn.tag == 2){
         _downLineView.frame = CGRectMake(10+btnWidth+10, 25, btnWidth, 5);
+        [self request:98];
     }
     if(btn.tag == 3){
         _downLineView.frame = CGRectMake(10+(btnWidth+10)*2, 25, btnWidth, 5);
+        [self request:96];
     }
     if(btn.tag == 4){
         _downLineView.frame = CGRectMake(10+(btnWidth+10)*3, 25, btnWidth, 5);
+        [self request:95];
     }
     if(btn.tag == 5){
         _downLineView.frame = CGRectMake(10+(btnWidth+10)*4, 25, btnWidth, 5);
+        [self request:97];
     }
 }
 
@@ -119,23 +127,25 @@
     
 }
 
+- (void)loadTableView{
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 97, SCREEN_WIDTH, _itemList.count*178) style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    [self.view addSubview:_tableView];
+}
+
 -(void) request:(NSInteger)status{
-    NSString *param = [NSString stringWithFormat:@"id=%@&status=%d%@",[FlyBirdTool getValue:@"userId"],status,[FlyBirdTool getTsTK]];
+    NSString *param = [NSString stringWithFormat:@"id=%@&status=%ld%@",[FlyBirdTool getValue:@"userId"],status,[FlyBirdTool getTsTK]];
     NSLog(@"parma:%@",param);
     HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
         if(error == nil){
             NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
             NSLog(@"%@",text);
-            NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
-            if([[[dic objectForKey:@"res"] stringValue] isEqualToString:@"200"] || true){
-                //[FlyBirdTool setKey:@"userId" Value:[dic objectForKey:@"id"]];
-//                [FlyBirdTool setKey:@"userId" Value:@"16"];
-//                MainViewController *controller = [[MainViewController alloc]init];
-//                controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
-//                [self presentViewController:controller animated:YES completion:nil];
-            }else{
-                UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"用户名或密码错误，请重新输入" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-                [alert show];
+            NSArray * array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+            [_itemList removeAllObjects];
+            for(int i=0;i<array.count;i++){
+                ApplyListModel *model = [[ApplyListModel alloc]init];
+                [model parseResponse:array[i]];
+                [_itemList addObject:model];
             }
         }else{
             UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"内部服务器错误，请检查网络连接" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
@@ -145,19 +155,14 @@
     [FlyBirdTool httpPost:@"api/querylist/" param:param completeHander:handler];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
 }
-*/
 
 @end

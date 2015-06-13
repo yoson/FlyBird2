@@ -27,7 +27,7 @@
 		7E3C56881B291D71002CB6F4 /* ApplyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56871B291D71002CB6F4 /* ApplyListViewController.m */; };
 		7E3C568B1B29B442002CB6F4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E3C56891B29B442002CB6F4 /* LaunchScreen.xib */; };
 		7E3C568E1B29B664002CB6F4 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C568D1B29B664002CB6F4 /* UIColor+Hex.m */; };
-		7E3C56941B2C8331002CB6F4 /* ApplyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56931B2C8331002CB6F4 /* ApplyListCell.m */; };
+		7E3C569B1B2C8C00002CB6F4 /* ApplyListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56991B2C8C00002CB6F4 /* ApplyListTableViewCell.m */; };
 		A0385AA4352E4A4B44A8D1B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6449C7864C5DBBE2BFEA34F4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -82,8 +82,8 @@
 		7E3C568A1B29B442002CB6F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		7E3C568C1B29B664002CB6F4 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Hex.h"; path = "../UIColor+Hex.h"; sourceTree = "<group>"; };
 		7E3C568D1B29B664002CB6F4 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Hex.m"; path = "../UIColor+Hex.m"; sourceTree = "<group>"; };
-		7E3C56921B2C8331002CB6F4 /* ApplyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyListCell.h; sourceTree = "<group>"; };
-		7E3C56931B2C8331002CB6F4 /* ApplyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyListCell.m; sourceTree = "<group>"; };
+		7E3C56981B2C8C00002CB6F4 /* ApplyListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyListTableViewCell.h; sourceTree = "<group>"; };
+		7E3C56991B2C8C00002CB6F4 /* ApplyListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyListTableViewCell.m; sourceTree = "<group>"; };
 		82C2FDFBFDBDCADEC214306B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D64309BA6004E9F69A6C40F6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,8 +223,8 @@
 				7E3C56841B291D40002CB6F4 /* MineViewController.m */,
 				7E3C56861B291D71002CB6F4 /* ApplyListViewController.h */,
 				7E3C56871B291D71002CB6F4 /* ApplyListViewController.m */,
-				7E3C56921B2C8331002CB6F4 /* ApplyListCell.h */,
-				7E3C56931B2C8331002CB6F4 /* ApplyListCell.m */,
+				7E3C56981B2C8C00002CB6F4 /* ApplyListTableViewCell.h */,
+				7E3C56991B2C8C00002CB6F4 /* ApplyListTableViewCell.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -377,6 +377,7 @@
 				7E3C56851B291D40002CB6F4 /* MineViewController.m in Sources */,
 				7E3C56421B290122002CB6F4 /* LoginViewController.m in Sources */,
 				7E3C56821B291D2E002CB6F4 /* MessageViewController.m in Sources */,
+				7E3C569B1B2C8C00002CB6F4 /* ApplyListTableViewCell.m in Sources */,
 				7E3C563F1B290122002CB6F4 /* AppDelegate.m in Sources */,
 				7E3C568E1B29B664002CB6F4 /* UIColor+Hex.m in Sources */,
 				7E3C567C1B291BD3002CB6F4 /* RemarkInfoModel.m in Sources */,
@@ -386,7 +387,6 @@
 				7E3C566A1B291AF9002CB6F4 /* BasicInfoModel.m in Sources */,
 				7E3C563C1B290122002CB6F4 /* main.m in Sources */,
 				7E3C56761B291BA2002CB6F4 /* CarInfoModel.m in Sources */,
-				7E3C56941B2C8331002CB6F4 /* ApplyListCell.m in Sources */,
 				7E3C56701B291B6B002CB6F4 /* MessageListModel.m in Sources */,
 				7E3C56881B291D71002CB6F4 /* ApplyListViewController.m in Sources */,
 				7E3C56791B291BBE002CB6F4 /* OtherInfoModel.m in Sources */,
