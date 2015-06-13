@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E3C563C1B290122002CB6F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C563B1B290122002CB6F4 /* main.m */; };
+		7E3C563F1B290122002CB6F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C563E1B290122002CB6F4 /* AppDelegate.m */; };
+		7E3C56421B290122002CB6F4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56411B290122002CB6F4 /* LoginViewController.m */; };
+		7E3C56451B290122002CB6F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E3C56431B290122002CB6F4 /* Main.storyboard */; };
+		7E3C56471B290123002CB6F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E3C56461B290123002CB6F4 /* Images.xcassets */; };
+		7E3C56561B290123002CB6F4 /* FlyBirdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56551B290123002CB6F4 /* FlyBirdTests.m */; };
+		7E3C56611B290643002CB6F4 /* FlyBirdTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56601B290643002CB6F4 /* FlyBirdTool.m */; };
+		7E3C56641B291A5D002CB6F4 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56631B291A5D002CB6F4 /* MainViewController.m */; };
+		7E3C566A1B291AF9002CB6F4 /* BasicInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56691B291AF9002CB6F4 /* BasicInfoModel.m */; };
+		7E3C566D1B291B54002CB6F4 /* ApplyListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C566C1B291B54002CB6F4 /* ApplyListModel.m */; };
+		7E3C56701B291B6B002CB6F4 /* MessageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C566F1B291B6B002CB6F4 /* MessageListModel.m */; };
+		7E3C56731B291B8D002CB6F4 /* HouseInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56721B291B8D002CB6F4 /* HouseInfoModel.m */; };
+		7E3C56761B291BA2002CB6F4 /* CarInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56751B291BA2002CB6F4 /* CarInfoModel.m */; };
+		7E3C56791B291BBE002CB6F4 /* OtherInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56781B291BBE002CB6F4 /* OtherInfoModel.m */; };
+		7E3C567C1B291BD3002CB6F4 /* RemarkInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C567B1B291BD3002CB6F4 /* RemarkInfoModel.m */; };
+		7E3C56821B291D2E002CB6F4 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56811B291D2E002CB6F4 /* MessageViewController.m */; };
+		7E3C56851B291D40002CB6F4 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56841B291D40002CB6F4 /* MineViewController.m */; };
+		7E3C56881B291D71002CB6F4 /* ApplyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56871B291D71002CB6F4 /* ApplyListViewController.m */; };
+		7E3C568B1B29B442002CB6F4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E3C56891B29B442002CB6F4 /* LaunchScreen.xib */; };
+		7E3C568E1B29B664002CB6F4 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C568D1B29B664002CB6F4 /* UIColor+Hex.m */; };
+		7E3C56941B2C8331002CB6F4 /* ApplyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56931B2C8331002CB6F4 /* ApplyListCell.m */; };
+		A0385AA4352E4A4B44A8D1B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6449C7864C5DBBE2BFEA34F4 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7E3C56501B290123002CB6F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E3C562E1B290122002CB6F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E3C56351B290122002CB6F4;
+			remoteInfo = FlyBird;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6449C7864C5DBBE2BFEA34F4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E3C56361B290122002CB6F4 /* FlyBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E3C563A1B290122002CB6F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E3C563B1B290122002CB6F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7E3C563D1B290122002CB6F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7E3C563E1B290122002CB6F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7E3C56401B290122002CB6F4 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		7E3C56411B290122002CB6F4 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		7E3C56441B290122002CB6F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7E3C56461B290123002CB6F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7E3C564F1B290123002CB6F4 /* FlyBirdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlyBirdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E3C56541B290123002CB6F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E3C56551B290123002CB6F4 /* FlyBirdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlyBirdTests.m; sourceTree = "<group>"; };
+		7E3C565F1B290643002CB6F4 /* FlyBirdTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyBirdTool.h; sourceTree = "<group>"; };
+		7E3C56601B290643002CB6F4 /* FlyBirdTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyBirdTool.m; sourceTree = "<group>"; };
+		7E3C56621B291A5D002CB6F4 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		7E3C56631B291A5D002CB6F4 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		7E3C56681B291AF9002CB6F4 /* BasicInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicInfoModel.h; sourceTree = "<group>"; };
+		7E3C56691B291AF9002CB6F4 /* BasicInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicInfoModel.m; sourceTree = "<group>"; };
+		7E3C566B1B291B54002CB6F4 /* ApplyListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyListModel.h; sourceTree = "<group>"; };
+		7E3C566C1B291B54002CB6F4 /* ApplyListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyListModel.m; sourceTree = "<group>"; };
+		7E3C566E1B291B6B002CB6F4 /* MessageListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageListModel.h; sourceTree = "<group>"; };
+		7E3C566F1B291B6B002CB6F4 /* MessageListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListModel.m; sourceTree = "<group>"; };
+		7E3C56711B291B8D002CB6F4 /* HouseInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseInfoModel.h; sourceTree = "<group>"; };
+		7E3C56721B291B8D002CB6F4 /* HouseInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseInfoModel.m; sourceTree = "<group>"; };
+		7E3C56741B291BA2002CB6F4 /* CarInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarInfoModel.h; sourceTree = "<group>"; };
+		7E3C56751B291BA2002CB6F4 /* CarInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarInfoModel.m; sourceTree = "<group>"; };
+		7E3C56771B291BBE002CB6F4 /* OtherInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherInfoModel.h; sourceTree = "<group>"; };
+		7E3C56781B291BBE002CB6F4 /* OtherInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherInfoModel.m; sourceTree = "<group>"; };
+		7E3C567A1B291BD3002CB6F4 /* RemarkInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemarkInfoModel.h; sourceTree = "<group>"; };
+		7E3C567B1B291BD3002CB6F4 /* RemarkInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemarkInfoModel.m; sourceTree = "<group>"; };
+		7E3C56801B291D2E002CB6F4 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		7E3C56811B291D2E002CB6F4 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		7E3C56831B291D40002CB6F4 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		7E3C56841B291D40002CB6F4 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		7E3C56861B291D71002CB6F4 /* ApplyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyListViewController.h; sourceTree = "<group>"; };
+		7E3C56871B291D71002CB6F4 /* ApplyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyListViewController.m; sourceTree = "<group>"; };
+		7E3C568A1B29B442002CB6F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7E3C568C1B29B664002CB6F4 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Hex.h"; path = "../UIColor+Hex.h"; sourceTree = "<group>"; };
+		7E3C568D1B29B664002CB6F4 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Hex.m"; path = "../UIColor+Hex.m"; sourceTree = "<group>"; };
+		7E3C56921B2C8331002CB6F4 /* ApplyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyListCell.h; sourceTree = "<group>"; };
+		7E3C56931B2C8331002CB6F4 /* ApplyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyListCell.m; sourceTree = "<group>"; };
+		82C2FDFBFDBDCADEC214306B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D64309BA6004E9F69A6C40F6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E3C56331B290122002CB6F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0385AA4352E4A4B44A8D1B1 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E3C564C1B290123002CB6F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07EA4DFDB9011CD385CE7930 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D64309BA6004E9F69A6C40F6 /* Pods.debug.xcconfig */,
+				82C2FDFBFDBDCADEC214306B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7E3C562D1B290122002CB6F4 = {
+			isa = PBXGroup;
+			children = (
+				7E3C56381B290122002CB6F4 /* FlyBird */,
+				7E3C56521B290123002CB6F4 /* FlyBirdTests */,
+				7E3C56371B290122002CB6F4 /* Products */,
+				07EA4DFDB9011CD385CE7930 /* Pods */,
+				F54CA050441F0C3A07BED7D2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7E3C56371B290122002CB6F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E3C56361B290122002CB6F4 /* FlyBird.app */,
+				7E3C564F1B290123002CB6F4 /* FlyBirdTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E3C56381B290122002CB6F4 /* FlyBird */ = {
+			isa = PBXGroup;
+			children = (
+				7E3C56671B291A97002CB6F4 /* Controller */,
+				7E3C56661B291A81002CB6F4 /* Tool */,
+				7E3C56651B291A70002CB6F4 /* Model */,
+				7E3C563D1B290122002CB6F4 /* AppDelegate.h */,
+				7E3C563E1B290122002CB6F4 /* AppDelegate.m */,
+				7E3C56891B29B442002CB6F4 /* LaunchScreen.xib */,
+				7E3C56431B290122002CB6F4 /* Main.storyboard */,
+				7E3C56461B290123002CB6F4 /* Images.xcassets */,
+				7E3C56391B290122002CB6F4 /* Supporting Files */,
+			);
+			path = FlyBird;
+			sourceTree = "<group>";
+		};
+		7E3C56391B290122002CB6F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E3C563A1B290122002CB6F4 /* Info.plist */,
+				7E3C563B1B290122002CB6F4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7E3C56521B290123002CB6F4 /* FlyBirdTests */ = {
+			isa = PBXGroup;
+			children = (
+				7E3C56551B290123002CB6F4 /* FlyBirdTests.m */,
+				7E3C56531B290123002CB6F4 /* Supporting Files */,
+			);
+			path = FlyBirdTests;
+			sourceTree = "<group>";
+		};
+		7E3C56531B290123002CB6F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E3C56541B290123002CB6F4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7E3C56651B291A70002CB6F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7E3C56681B291AF9002CB6F4 /* BasicInfoModel.h */,
+				7E3C56691B291AF9002CB6F4 /* BasicInfoModel.m */,
+				7E3C566B1B291B54002CB6F4 /* ApplyListModel.h */,
+				7E3C566C1B291B54002CB6F4 /* ApplyListModel.m */,
+				7E3C566E1B291B6B002CB6F4 /* MessageListModel.h */,
+				7E3C566F1B291B6B002CB6F4 /* MessageListModel.m */,
+				7E3C56711B291B8D002CB6F4 /* HouseInfoModel.h */,
+				7E3C56721B291B8D002CB6F4 /* HouseInfoModel.m */,
+				7E3C56741B291BA2002CB6F4 /* CarInfoModel.h */,
+				7E3C56751B291BA2002CB6F4 /* CarInfoModel.m */,
+				7E3C56771B291BBE002CB6F4 /* OtherInfoModel.h */,
+				7E3C56781B291BBE002CB6F4 /* OtherInfoModel.m */,
+				7E3C567A1B291BD3002CB6F4 /* RemarkInfoModel.h */,
+				7E3C567B1B291BD3002CB6F4 /* RemarkInfoModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7E3C56661B291A81002CB6F4 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				7E3C568C1B29B664002CB6F4 /* UIColor+Hex.h */,
+				7E3C568D1B29B664002CB6F4 /* UIColor+Hex.m */,
+				7E3C56601B290643002CB6F4 /* FlyBirdTool.m */,
+				7E3C565F1B290643002CB6F4 /* FlyBirdTool.h */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		7E3C56671B291A97002CB6F4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7E3C56401B290122002CB6F4 /* LoginViewController.h */,
+				7E3C56411B290122002CB6F4 /* LoginViewController.m */,
+				7E3C56621B291A5D002CB6F4 /* MainViewController.h */,
+				7E3C56631B291A5D002CB6F4 /* MainViewController.m */,
+				7E3C56801B291D2E002CB6F4 /* MessageViewController.h */,
+				7E3C56811B291D2E002CB6F4 /* MessageViewController.m */,
+				7E3C56831B291D40002CB6F4 /* MineViewController.h */,
+				7E3C56841B291D40002CB6F4 /* MineViewController.m */,
+				7E3C56861B291D71002CB6F4 /* ApplyListViewController.h */,
+				7E3C56871B291D71002CB6F4 /* ApplyListViewController.m */,
+				7E3C56921B2C8331002CB6F4 /* ApplyListCell.h */,
+				7E3C56931B2C8331002CB6F4 /* ApplyListCell.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F54CA050441F0C3A07BED7D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6449C7864C5DBBE2BFEA34F4 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E3C56351B290122002CB6F4 /* FlyBird */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E3C56591B290123002CB6F4 /* Build configuration list for PBXNativeTarget "FlyBird" */;
+			buildPhases = (
+				1B3F8DDB2D21282CE24ACF29 /* Check Pods Manifest.lock */,
+				7E3C56321B290122002CB6F4 /* Sources */,
+				7E3C56331B290122002CB6F4 /* Frameworks */,
+				7E3C56341B290122002CB6F4 /* Resources */,
+				270040A72C9E705891D799FD /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlyBird;
+			productName = FlyBird;
+			productReference = 7E3C56361B290122002CB6F4 /* FlyBird.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7E3C564E1B290123002CB6F4 /* FlyBirdTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E3C565C1B290123002CB6F4 /* Build configuration list for PBXNativeTarget "FlyBirdTests" */;
+			buildPhases = (
+				7E3C564B1B290123002CB6F4 /* Sources */,
+				7E3C564C1B290123002CB6F4 /* Frameworks */,
+				7E3C564D1B290123002CB6F4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7E3C56511B290123002CB6F4 /* PBXTargetDependency */,
+			);
+			name = FlyBirdTests;
+			productName = FlyBirdTests;
+			productReference = 7E3C564F1B290123002CB6F4 /* FlyBirdTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E3C562E1B290122002CB6F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = yosonyuan;
+				TargetAttributes = {
+					7E3C56351B290122002CB6F4 = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 3XL2SKFH29;
+					};
+					7E3C564E1B290123002CB6F4 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 7E3C56351B290122002CB6F4;
+					};
+				};
+			};
+			buildConfigurationList = 7E3C56311B290122002CB6F4 /* Build configuration list for PBXProject "FlyBird" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7E3C562D1B290122002CB6F4;
+			productRefGroup = 7E3C56371B290122002CB6F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E3C56351B290122002CB6F4 /* FlyBird */,
+				7E3C564E1B290123002CB6F4 /* FlyBirdTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E3C56341B290122002CB6F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E3C56451B290122002CB6F4 /* Main.storyboard in Resources */,
+				7E3C568B1B29B442002CB6F4 /* LaunchScreen.xib in Resources */,
+				7E3C56471B290123002CB6F4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E3C564D1B290123002CB6F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B3F8DDB2D21282CE24ACF29 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		270040A72C9E705891D799FD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E3C56321B290122002CB6F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E3C566D1B291B54002CB6F4 /* ApplyListModel.m in Sources */,
+				7E3C56851B291D40002CB6F4 /* MineViewController.m in Sources */,
+				7E3C56421B290122002CB6F4 /* LoginViewController.m in Sources */,
+				7E3C56821B291D2E002CB6F4 /* MessageViewController.m in Sources */,
+				7E3C563F1B290122002CB6F4 /* AppDelegate.m in Sources */,
+				7E3C568E1B29B664002CB6F4 /* UIColor+Hex.m in Sources */,
+				7E3C567C1B291BD3002CB6F4 /* RemarkInfoModel.m in Sources */,
+				7E3C56611B290643002CB6F4 /* FlyBirdTool.m in Sources */,
+				7E3C56641B291A5D002CB6F4 /* MainViewController.m in Sources */,
+				7E3C56731B291B8D002CB6F4 /* HouseInfoModel.m in Sources */,
+				7E3C566A1B291AF9002CB6F4 /* BasicInfoModel.m in Sources */,
+				7E3C563C1B290122002CB6F4 /* main.m in Sources */,
+				7E3C56761B291BA2002CB6F4 /* CarInfoModel.m in Sources */,
+				7E3C56941B2C8331002CB6F4 /* ApplyListCell.m in Sources */,
+				7E3C56701B291B6B002CB6F4 /* MessageListModel.m in Sources */,
+				7E3C56881B291D71002CB6F4 /* ApplyListViewController.m in Sources */,
+				7E3C56791B291BBE002CB6F4 /* OtherInfoModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E3C564B1B290123002CB6F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E3C56561B290123002CB6F4 /* FlyBirdTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7E3C56511B290123002CB6F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E3C56351B290122002CB6F4 /* FlyBird */;
+			targetProxy = 7E3C56501B290123002CB6F4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7E3C56431B290122002CB6F4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E3C56441B290122002CB6F4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7E3C56891B29B442002CB6F4 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E3C568A1B29B442002CB6F4 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7E3C56571B290123002CB6F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7E3C56581B290123002CB6F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E3C565A1B290123002CB6F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D64309BA6004E9F69A6C40F6 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = FlyBird/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		7E3C565B1B290123002CB6F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82C2FDFBFDBDCADEC214306B /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = FlyBird/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		7E3C565D1B290123002CB6F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FlyBirdTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlyBird.app/FlyBird";
+			};
+			name = Debug;
+		};
+		7E3C565E1B290123002CB6F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FlyBirdTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlyBird.app/FlyBird";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E3C56311B290122002CB6F4 /* Build configuration list for PBXProject "FlyBird" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E3C56571B290123002CB6F4 /* Debug */,
+				7E3C56581B290123002CB6F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E3C56591B290123002CB6F4 /* Build configuration list for PBXNativeTarget "FlyBird" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E3C565A1B290123002CB6F4 /* Debug */,
+				7E3C565B1B290123002CB6F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E3C565C1B290123002CB6F4 /* Build configuration list for PBXNativeTarget "FlyBirdTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E3C565D1B290123002CB6F4 /* Debug */,
+				7E3C565E1B290123002CB6F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7E3C562E1B290122002CB6F4 /* Project object */;
+}
