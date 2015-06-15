@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FlyBird/LoginViewController.m"
-            timestampString = "455859975.760972"
+            filePath = "FlyBird/ApplyListTableViewCell.m"
+            timestampString = "456072367.615459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "-login"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-setData:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FlyBird/LoginViewController.m"
-            timestampString = "455867140.961491"
+            filePath = "FlyBird/ApplyListViewController.m"
+            timestampString = "456075728.606698"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "-login"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "-request:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FlyBird/FlyBirdTool.m"
-            timestampString = "455862213.711653"
+            filePath = "FlyBird/ApplyListViewController.m"
+            timestampString = "456075728.606698"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "+getTsTK"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FlyBird/ApplyListTableViewCell.m"
+            timestampString = "456072378.135004"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-dial"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -91,13 +91,15 @@
 }
 
 +(UIView*)getMaxCutLine:(CGPoint)frame{
-    UIView *_view = [[UIView alloc]initWithFrame:CGRectMake(frame.x, frame.y, SCREEN_WIDTH, 5)];
+    UIView *_view = [[UIView alloc]initWithFrame:CGRectMake(frame.x, frame.y, SCREEN_WIDTH, 10)];
     _view.backgroundColor = GRAY;
+    _view.alpha = 0.2;
     return  _view;
 }
 +(UIView*)getMinCutLine:(CGPoint)frame{
     UIView *_view = [[UIView alloc]initWithFrame:CGRectMake(frame.x, frame.y, SCREEN_WIDTH, 1)];
     _view.backgroundColor = GRAY;
+    _view.alpha = 0.2;
     return  _view;
 }
 @end

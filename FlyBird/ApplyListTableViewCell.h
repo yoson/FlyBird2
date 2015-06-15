@@ -14,6 +14,9 @@
 @property(strong,nonatomic)UILabel *borrowerName;
 @property(strong,nonatomic)UILabel *status;
 @property(strong,nonatomic)UILabel *create_time;
+@property(strong,nonatomic)UILabel *loanamount;
 @property(strong,nonatomic)UIButton *borrowerphone;
+@property(nonatomic,strong)NSString *number;
 -(void)setData:(ApplyListModel *)data;
++(CGFloat)height;
 @end

@@ -61,14 +61,15 @@
 
 - (void)login{
     
-    NSString *param = [NSString stringWithFormat:@"name=%@&passwd=%@%@&token=",_userName.text,[FlyBirdTool md5:_usePwd.text],[FlyBirdTool getTsTK]];
+//    NSString *param = [NSString stringWithFormat:@"name=%@&passwd=%@%@&token=",_userName.text,[FlyBirdTool md5:_usePwd.text],[FlyBirdTool getTsTK]];
+    NSString *param = [NSString stringWithFormat:@"name=%@&passwd=%@%@&token=",@"15810541077",[FlyBirdTool md5:@"111111"],[FlyBirdTool getTsTK]];
     NSLog(@"parma:%@",param);
     HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
         if(error == nil){
             NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
             NSLog(@"%@",text);
             NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
-            if([[[dic objectForKey:@"res"] stringValue] isEqualToString:@"200"] || true){
+            if([[[dic objectForKey:@"res"] stringValue] isEqualToString:@"200"]){
                 [FlyBirdTool setKey:@"userId" Value:[dic objectForKey:@"id"]];
                 //[FlyBirdTool setKey:@"userId" Value:@"16"];
                 MainViewController *controller = [[MainViewController alloc]init];
