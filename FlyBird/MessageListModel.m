@@ -10,4 +10,10 @@
 
 @implementation MessageListModel
 
+-(void)parseResponse:(NSDictionary *)dict{
+    self.oid = [dict objectForKey:@"oid"];
+    self.newstatus = [dict objectForKey:@"newstatus"];
+    self.verifycomment = [dict objectForKey:@"verifycomment"];
+    self.create_time = [dict objectForKey:@"create_time"];
+}
 @end

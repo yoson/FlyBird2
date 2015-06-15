@@ -28,6 +28,7 @@
 		7E3C568B1B29B442002CB6F4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E3C56891B29B442002CB6F4 /* LaunchScreen.xib */; };
 		7E3C568E1B29B664002CB6F4 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C568D1B29B664002CB6F4 /* UIColor+Hex.m */; };
 		7E3C569B1B2C8C00002CB6F4 /* ApplyListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56991B2C8C00002CB6F4 /* ApplyListTableViewCell.m */; };
+		7E3C569F1B2F2D7A002CB6F4 /* MessageListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C569E1B2F2D7A002CB6F4 /* MessageListTableViewCell.m */; };
 		A0385AA4352E4A4B44A8D1B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6449C7864C5DBBE2BFEA34F4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,8 @@
 		7E3C568D1B29B664002CB6F4 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Hex.m"; path = "../UIColor+Hex.m"; sourceTree = "<group>"; };
 		7E3C56981B2C8C00002CB6F4 /* ApplyListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplyListTableViewCell.h; sourceTree = "<group>"; };
 		7E3C56991B2C8C00002CB6F4 /* ApplyListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyListTableViewCell.m; sourceTree = "<group>"; };
+		7E3C569D1B2F2D7A002CB6F4 /* MessageListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageListTableViewCell.h; sourceTree = "<group>"; };
+		7E3C569E1B2F2D7A002CB6F4 /* MessageListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListTableViewCell.m; sourceTree = "<group>"; };
 		82C2FDFBFDBDCADEC214306B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D64309BA6004E9F69A6C40F6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +216,8 @@
 		7E3C56671B291A97002CB6F4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7E3C569D1B2F2D7A002CB6F4 /* MessageListTableViewCell.h */,
+				7E3C569E1B2F2D7A002CB6F4 /* MessageListTableViewCell.m */,
 				7E3C56401B290122002CB6F4 /* LoginViewController.h */,
 				7E3C56411B290122002CB6F4 /* LoginViewController.m */,
 				7E3C56621B291A5D002CB6F4 /* MainViewController.h */,
@@ -390,6 +395,7 @@
 				7E3C56701B291B6B002CB6F4 /* MessageListModel.m in Sources */,
 				7E3C56881B291D71002CB6F4 /* ApplyListViewController.m in Sources */,
 				7E3C56791B291BBE002CB6F4 /* OtherInfoModel.m in Sources */,
+				7E3C569F1B2F2D7A002CB6F4 /* MessageListTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

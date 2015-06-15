@@ -9,5 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface MessageListModel : NSObject
+@property(strong,nonatomic)NSString *oid;
+@property(strong,nonatomic)NSString *newstatus;
+@property(strong,nonatomic)NSString *verifycomment;
+@property(strong,nonatomic)NSString *create_time;
+-(void)parseResponse:(NSDictionary *)dict;
+
+
 
 @end
