@@ -28,25 +28,37 @@
     [view setImage:[UIImage imageNamed:@"logo.png"]];
     [self.view addSubview:view];
     
-    UILabel *userNameL = [[UILabel alloc]initWithFrame:CGRectMake(60, 230, 60, 40)];
+    UILabel *userNameL = [[UILabel alloc]initWithFrame:CGRectMake(60, 280, 60, 40)];
     userNameL.text = @"用户名:";
     userNameL.textColor = [UIColor whiteColor];
-    _userName = [[UITextField alloc]initWithFrame:CGRectMake(130, 233, SCREEN_WIDTH-190, 30)];
+    _userName = [[UITextField alloc]initWithFrame:CGRectMake(120, 283, SCREEN_WIDTH-180, 30)];
     _userName.layer.borderWidth=1;
     _userName.layer.borderColor=[[UIColor whiteColor]CGColor];
     _userName.placeholder = @" 请输入用户名";
+    _userName.font = [UIFont systemFontOfSize:12];
     _userName.delegate = self;
     [self.view addSubview:userNameL];
     [self.view addSubview:_userName];
     
-    UILabel *password = [[UILabel alloc]initWithFrame:CGRectMake(60, 290, 60, 40)];
+    UILabel *password = [[UILabel alloc]initWithFrame:CGRectMake(60, 350, 60, 40)];
     password.text = @"密码:";
     password.textColor = [UIColor whiteColor];
-    _usePwd = [[UITextField alloc]initWithFrame:CGRectMake(130, 293, SCREEN_WIDTH-190, 30)];
+    _usePwd = [[UITextField alloc]initWithFrame:CGRectMake(120, 353, SCREEN_WIDTH-180, 30)];
+    _usePwd.secureTextEntry = YES;
     _usePwd.layer.borderWidth=1;
     _usePwd.layer.borderColor=[[UIColor whiteColor]CGColor];
     _usePwd.placeholder = @" 请输入密码";
+    _usePwd.font = [UIFont systemFontOfSize:12];
     _usePwd.delegate=self;
+    
+    UIButton *forgetPwd = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-60-60, 390, 60, 30)];
+    [forgetPwd setTitle:@"忘记密码？" forState:UIControlStateNormal];
+    [forgetPwd addTarget:self action:@selector(forgotPwd)  forControlEvents :UIControlEventTouchUpInside];
+    forgetPwd.titleLabel.textAlignment = NSTextAlignmentRight;
+    [forgetPwd.titleLabel setFont:[UIFont boldSystemFontOfSize:12]];
+    [forgetPwd setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    [self.view addSubview:forgetPwd];
     [self.view addSubview:password];
     [self.view addSubview:_usePwd];
     
@@ -57,6 +69,11 @@
     [_login setTitleColor:YELLOW forState:UIControlStateNormal];
     [_login addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_login];
+}
+
+-(void)forgotPwd{
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"请通过区域经理联系您的总部管理员帮您重置密码" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [alert show];
 }
 
 - (void)login{
@@ -71,7 +88,8 @@
             NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
             if([[[dic objectForKey:@"res"] stringValue] isEqualToString:@"200"]){
                 [FlyBirdTool setKey:@"userId" Value:[dic objectForKey:@"id"]];
-                //[FlyBirdTool setKey:@"userId" Value:@"16"];
+                [FlyBirdTool setKey:@"pId" Value:[dic objectForKey:@"parentid"]];
+                [FlyBirdTool setKey:@"nick" Value:[dic objectForKey:@"nick"]];
                 MainViewController *controller = [[MainViewController alloc]init];
                 controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
                 [self presentViewController:controller animated:YES completion:nil];
