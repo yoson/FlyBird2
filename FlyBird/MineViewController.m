@@ -9,6 +9,7 @@
 #import "MineViewController.h"
 #import "FlyBirdTool.h"
 #import "LoginViewController.h"
+#import "ChangePasswordViewController.h"
 
 @interface MineViewController (){
     UIView *_backView;
@@ -92,6 +93,12 @@
     [_backView addSubview:line1];
     [_backView addSubview:_userName];
     [_backView addSubview:_cityManager];
+}
+
+- (void)changePwd{
+    ChangePasswordViewController *controller = [[ChangePasswordViewController alloc]init];
+    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 -(void)unregister{

@@ -29,6 +29,8 @@
 		7E3C568E1B29B664002CB6F4 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C568D1B29B664002CB6F4 /* UIColor+Hex.m */; };
 		7E3C569B1B2C8C00002CB6F4 /* ApplyListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56991B2C8C00002CB6F4 /* ApplyListTableViewCell.m */; };
 		7E3C569F1B2F2D7A002CB6F4 /* MessageListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C569E1B2F2D7A002CB6F4 /* MessageListTableViewCell.m */; };
+		7EF85FBD1B315EE2009B548A /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF85FBC1B315EE2009B548A /* ChangePasswordViewController.m */; };
+		7EF85FC01B31BD3C009B548A /* STextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF85FBF1B31BD3C009B548A /* STextView.m */; };
 		A0385AA4352E4A4B44A8D1B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6449C7864C5DBBE2BFEA34F4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,10 @@
 		7E3C56991B2C8C00002CB6F4 /* ApplyListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyListTableViewCell.m; sourceTree = "<group>"; };
 		7E3C569D1B2F2D7A002CB6F4 /* MessageListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageListTableViewCell.h; sourceTree = "<group>"; };
 		7E3C569E1B2F2D7A002CB6F4 /* MessageListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListTableViewCell.m; sourceTree = "<group>"; };
+		7EF85FBB1B315EE2009B548A /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		7EF85FBC1B315EE2009B548A /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
+		7EF85FBE1B31BD3C009B548A /* STextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STextView.h; sourceTree = "<group>"; };
+		7EF85FBF1B31BD3C009B548A /* STextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STextView.m; sourceTree = "<group>"; };
 		82C2FDFBFDBDCADEC214306B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D64309BA6004E9F69A6C40F6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -230,6 +236,10 @@
 				7E3C56871B291D71002CB6F4 /* ApplyListViewController.m */,
 				7E3C56981B2C8C00002CB6F4 /* ApplyListTableViewCell.h */,
 				7E3C56991B2C8C00002CB6F4 /* ApplyListTableViewCell.m */,
+				7EF85FBB1B315EE2009B548A /* ChangePasswordViewController.h */,
+				7EF85FBC1B315EE2009B548A /* ChangePasswordViewController.m */,
+				7EF85FBE1B31BD3C009B548A /* STextView.h */,
+				7EF85FBF1B31BD3C009B548A /* STextView.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -387,6 +397,7 @@
 				7E3C568E1B29B664002CB6F4 /* UIColor+Hex.m in Sources */,
 				7E3C567C1B291BD3002CB6F4 /* RemarkInfoModel.m in Sources */,
 				7E3C56611B290643002CB6F4 /* FlyBirdTool.m in Sources */,
+				7EF85FC01B31BD3C009B548A /* STextView.m in Sources */,
 				7E3C56641B291A5D002CB6F4 /* MainViewController.m in Sources */,
 				7E3C56731B291B8D002CB6F4 /* HouseInfoModel.m in Sources */,
 				7E3C566A1B291AF9002CB6F4 /* BasicInfoModel.m in Sources */,
@@ -394,6 +405,7 @@
 				7E3C56761B291BA2002CB6F4 /* CarInfoModel.m in Sources */,
 				7E3C56701B291B6B002CB6F4 /* MessageListModel.m in Sources */,
 				7E3C56881B291D71002CB6F4 /* ApplyListViewController.m in Sources */,
+				7EF85FBD1B315EE2009B548A /* ChangePasswordViewController.m in Sources */,
 				7E3C56791B291BBE002CB6F4 /* OtherInfoModel.m in Sources */,
 				7E3C569F1B2F2D7A002CB6F4 /* MessageListTableViewCell.m in Sources */,
 			);

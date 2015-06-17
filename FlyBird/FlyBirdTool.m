@@ -102,4 +102,11 @@
     _view.alpha = 0.2;
     return  _view;
 }
+
+//+(UIView*)getLableAndTextField:(CGPoint)point lable:(NSString *)lableText placeHolder:(NSString*)holderText{
+//    UIView * _view = [[UIView alloc]initWithFrame:CGRectMake(point.x, point.y, SCREEN_WIDTH, 40)];
+//    UILabel *_lable = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, 200, 40)];
+//    _lable.text = lableText;
+//    UITextField
+//}
 @end

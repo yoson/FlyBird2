@@ -126,7 +126,7 @@
     navBar.barTintColor = YELLOW;
     UINavigationItem *item = [[UINavigationItem alloc]initWithTitle:@"申请"];
    // UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithTitle:@"新增" style:UIBarButtonItemStylePlain target:self action:@selector(clickRight)];
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(clickRight)];
+UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(clickRight)];
     rightButton.tintColor = [UIColor blackColor];
     [item setRightBarButtonItem:rightButton animated:YES];
     [navBar pushNavigationItem:item animated:YES];

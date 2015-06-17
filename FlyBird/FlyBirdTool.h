@@ -29,5 +29,6 @@ typedef void (^HandlerBlock) (NSData *data,NSURLResponse *response,NSError *erro
 +(void)submitImg:(NSString *)url  param:(NSDictionary *)param completeHander:(HandlerBlock)handler;
 +(UIView*)getMaxCutLine:(CGPoint)frame;
 +(UIView*)getMinCutLine:(CGPoint)frame;
+//+(UIView*)getLableAndTextField:(CGPoint)point lable:(NSString *)lableText placeHolder:(NSString*)holderText;
 
 @end
