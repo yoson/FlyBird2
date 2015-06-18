@@ -8,15 +8,16 @@
 
 #import "STextView.h"
 #import "FlyBirdTool.h"
+#define height 35
 
 @implementation STextView
 
 -(id)initWithFrame:(CGRect)frame{
-    self = [super initWithFrame:frame];
+    self = [super initWithFrame:CGRectMake(0, frame.origin.y, SCREEN_WIDTH, height)];
     if(self){
-        _lable = [[UILabel alloc]initWithFrame:CGRectMake(10,0, 100, 40)];
-        _field = [[UITextField alloc]initWithFrame:CGRectMake(110,0,SCREEN_WIDTH-110, 40)];
-        UIView *cutLine = [FlyBirdTool getMinCutLine:CGPointMake(0, 40)];
+        _lable = [[UILabel alloc]initWithFrame:CGRectMake(10,0, 100, height)];
+        _field = [[UITextField alloc]initWithFrame:CGRectMake(110,1,SCREEN_WIDTH-110, height)];
+        UIView *cutLine = [FlyBirdTool getMinCutLine:CGPointMake(0, height)];
         [self addSubview:cutLine];
         [self addSubview:_lable];
         [self addSubview:_field];

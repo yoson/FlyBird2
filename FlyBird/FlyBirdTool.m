@@ -102,11 +102,12 @@
     _view.alpha = 0.2;
     return  _view;
 }
-
-//+(UIView*)getLableAndTextField:(CGPoint)point lable:(NSString *)lableText placeHolder:(NSString*)holderText{
-//    UIView * _view = [[UIView alloc]initWithFrame:CGRectMake(point.x, point.y, SCREEN_WIDTH, 40)];
-//    UILabel *_lable = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, 200, 40)];
-//    _lable.text = lableText;
-//    UITextField
-//}
++(UILabel*)getTitleLable:(CGPoint)frame setTitle:(NSString *)title{
+    UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(0, frame.y, SCREEN_WIDTH, 35)];
+    lable.backgroundColor = GRAY;
+    lable.alpha = 0.2;
+    lable.text = [NSString stringWithFormat:@"  %@",title];
+    lable.font = [UIFont systemFontOfSize:14 weight:200];
+    return lable;
+}
 @end

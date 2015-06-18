@@ -17,6 +17,7 @@
 @property(strong,nonatomic)UILabel *loanamount;
 @property(strong,nonatomic)UIButton *borrowerphone;
 @property(nonatomic,strong)NSString *number;
+@property(nonatomic,strong)NSString *applyId;
 -(void)setData:(ApplyListModel *)data;
 +(CGFloat)height;
 @end

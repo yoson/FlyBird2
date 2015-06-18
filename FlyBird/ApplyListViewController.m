@@ -11,6 +11,7 @@
 #import "ApplyListTableViewCell.h"
 #import "ApplyListModel.h"
 #import "ODRefreshControl.h"
+#import "NewApplyBasicViewController.h"
 
 @interface ApplyListViewController ()<UITableViewDataSource,UITableViewDelegate>{
     UITableView *_tableView;
@@ -135,7 +136,10 @@ UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemI
 }
 
 -(void) clickRight{
-    
+    [FlyBirdTool setKey:@"flag" Value:@"add"];
+    NewApplyBasicViewController *controller = [[NewApplyBasicViewController alloc]init];
+    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 - (void)loadTableView{

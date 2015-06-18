@@ -29,6 +29,7 @@
 		7E3C568E1B29B664002CB6F4 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C568D1B29B664002CB6F4 /* UIColor+Hex.m */; };
 		7E3C569B1B2C8C00002CB6F4 /* ApplyListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56991B2C8C00002CB6F4 /* ApplyListTableViewCell.m */; };
 		7E3C569F1B2F2D7A002CB6F4 /* MessageListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C569E1B2F2D7A002CB6F4 /* MessageListTableViewCell.m */; };
+		7E6B8A8E1B3310C600317920 /* NewApplyBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6B8A8D1B3310C600317920 /* NewApplyBasicViewController.m */; };
 		7EF85FBD1B315EE2009B548A /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF85FBC1B315EE2009B548A /* ChangePasswordViewController.m */; };
 		7EF85FC01B31BD3C009B548A /* STextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF85FBF1B31BD3C009B548A /* STextView.m */; };
 		A0385AA4352E4A4B44A8D1B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6449C7864C5DBBE2BFEA34F4 /* libPods.a */; };
@@ -89,6 +90,8 @@
 		7E3C56991B2C8C00002CB6F4 /* ApplyListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplyListTableViewCell.m; sourceTree = "<group>"; };
 		7E3C569D1B2F2D7A002CB6F4 /* MessageListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageListTableViewCell.h; sourceTree = "<group>"; };
 		7E3C569E1B2F2D7A002CB6F4 /* MessageListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListTableViewCell.m; sourceTree = "<group>"; };
+		7E6B8A8C1B3310C600317920 /* NewApplyBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewApplyBasicViewController.h; sourceTree = "<group>"; };
+		7E6B8A8D1B3310C600317920 /* NewApplyBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewApplyBasicViewController.m; sourceTree = "<group>"; };
 		7EF85FBB1B315EE2009B548A /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
 		7EF85FBC1B315EE2009B548A /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		7EF85FBE1B31BD3C009B548A /* STextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STextView.h; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 				7EF85FBC1B315EE2009B548A /* ChangePasswordViewController.m */,
 				7EF85FBE1B31BD3C009B548A /* STextView.h */,
 				7EF85FBF1B31BD3C009B548A /* STextView.m */,
+				7E6B8A8C1B3310C600317920 /* NewApplyBasicViewController.h */,
+				7E6B8A8D1B3310C600317920 /* NewApplyBasicViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -389,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E3C566D1B291B54002CB6F4 /* ApplyListModel.m in Sources */,
+				7E6B8A8E1B3310C600317920 /* NewApplyBasicViewController.m in Sources */,
 				7E3C56851B291D40002CB6F4 /* MineViewController.m in Sources */,
 				7E3C56421B290122002CB6F4 /* LoginViewController.m in Sources */,
 				7E3C56821B291D2E002CB6F4 /* MessageViewController.m in Sources */,

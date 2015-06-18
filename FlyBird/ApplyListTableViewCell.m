@@ -68,6 +68,7 @@
     _loanamount.text =[NSString stringWithFormat:@"申请金额:%@",data.loanamount];
     _create_time.text = [NSString stringWithFormat:@"申请时间:%@",data.create_time];
     _number = data.borrowerphone;
+    _applyId = data.id;
     
 }
 
@@ -77,7 +78,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
