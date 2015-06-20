@@ -30,6 +30,10 @@
 		7E3C569B1B2C8C00002CB6F4 /* ApplyListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56991B2C8C00002CB6F4 /* ApplyListTableViewCell.m */; };
 		7E3C569F1B2F2D7A002CB6F4 /* MessageListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C569E1B2F2D7A002CB6F4 /* MessageListTableViewCell.m */; };
 		7E6B8A8E1B3310C600317920 /* NewApplyBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6B8A8D1B3310C600317920 /* NewApplyBasicViewController.m */; };
+		7EF4B7051B3518C800A34F7F /* NewApplyHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF4B7041B3518C800A34F7F /* NewApplyHouseViewController.m */; };
+		7EF4B7081B351F7C00A34F7F /* PhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF4B7071B351F7C00A34F7F /* PhotoView.m */; };
+		7EF4B70B1B3562DA00A34F7F /* NewApplyCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF4B70A1B3562DA00A34F7F /* NewApplyCarViewController.m */; };
+		7EF4B70E1B356DCB00A34F7F /* CheckListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF4B70D1B356DCB00A34F7F /* CheckListViewController.m */; };
 		7EF85FBD1B315EE2009B548A /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF85FBC1B315EE2009B548A /* ChangePasswordViewController.m */; };
 		7EF85FC01B31BD3C009B548A /* STextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF85FBF1B31BD3C009B548A /* STextView.m */; };
 		A0385AA4352E4A4B44A8D1B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6449C7864C5DBBE2BFEA34F4 /* libPods.a */; };
@@ -92,6 +96,14 @@
 		7E3C569E1B2F2D7A002CB6F4 /* MessageListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListTableViewCell.m; sourceTree = "<group>"; };
 		7E6B8A8C1B3310C600317920 /* NewApplyBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewApplyBasicViewController.h; sourceTree = "<group>"; };
 		7E6B8A8D1B3310C600317920 /* NewApplyBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewApplyBasicViewController.m; sourceTree = "<group>"; };
+		7EF4B7031B3518C800A34F7F /* NewApplyHouseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewApplyHouseViewController.h; sourceTree = "<group>"; };
+		7EF4B7041B3518C800A34F7F /* NewApplyHouseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewApplyHouseViewController.m; sourceTree = "<group>"; };
+		7EF4B7061B351F7C00A34F7F /* PhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoView.h; sourceTree = "<group>"; };
+		7EF4B7071B351F7C00A34F7F /* PhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoView.m; sourceTree = "<group>"; };
+		7EF4B7091B3562DA00A34F7F /* NewApplyCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewApplyCarViewController.h; sourceTree = "<group>"; };
+		7EF4B70A1B3562DA00A34F7F /* NewApplyCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewApplyCarViewController.m; sourceTree = "<group>"; };
+		7EF4B70C1B356DCB00A34F7F /* CheckListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckListViewController.h; sourceTree = "<group>"; };
+		7EF4B70D1B356DCB00A34F7F /* CheckListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckListViewController.m; sourceTree = "<group>"; };
 		7EF85FBB1B315EE2009B548A /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
 		7EF85FBC1B315EE2009B548A /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		7EF85FBE1B31BD3C009B548A /* STextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STextView.h; sourceTree = "<group>"; };
@@ -236,6 +248,8 @@
 				7E3C56831B291D40002CB6F4 /* MineViewController.h */,
 				7E3C56841B291D40002CB6F4 /* MineViewController.m */,
 				7E3C56861B291D71002CB6F4 /* ApplyListViewController.h */,
+				7EF4B70C1B356DCB00A34F7F /* CheckListViewController.h */,
+				7EF4B70D1B356DCB00A34F7F /* CheckListViewController.m */,
 				7E3C56871B291D71002CB6F4 /* ApplyListViewController.m */,
 				7E3C56981B2C8C00002CB6F4 /* ApplyListTableViewCell.h */,
 				7E3C56991B2C8C00002CB6F4 /* ApplyListTableViewCell.m */,
@@ -245,6 +259,12 @@
 				7EF85FBF1B31BD3C009B548A /* STextView.m */,
 				7E6B8A8C1B3310C600317920 /* NewApplyBasicViewController.h */,
 				7E6B8A8D1B3310C600317920 /* NewApplyBasicViewController.m */,
+				7EF4B7031B3518C800A34F7F /* NewApplyHouseViewController.h */,
+				7EF4B7041B3518C800A34F7F /* NewApplyHouseViewController.m */,
+				7EF4B7061B351F7C00A34F7F /* PhotoView.h */,
+				7EF4B7071B351F7C00A34F7F /* PhotoView.m */,
+				7EF4B7091B3562DA00A34F7F /* NewApplyCarViewController.h */,
+				7EF4B70A1B3562DA00A34F7F /* NewApplyCarViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -394,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E3C566D1B291B54002CB6F4 /* ApplyListModel.m in Sources */,
+				7EF4B7081B351F7C00A34F7F /* PhotoView.m in Sources */,
 				7E6B8A8E1B3310C600317920 /* NewApplyBasicViewController.m in Sources */,
 				7E3C56851B291D40002CB6F4 /* MineViewController.m in Sources */,
 				7E3C56421B290122002CB6F4 /* LoginViewController.m in Sources */,
@@ -403,13 +424,16 @@
 				7E3C568E1B29B664002CB6F4 /* UIColor+Hex.m in Sources */,
 				7E3C567C1B291BD3002CB6F4 /* RemarkInfoModel.m in Sources */,
 				7E3C56611B290643002CB6F4 /* FlyBirdTool.m in Sources */,
+				7EF4B70B1B3562DA00A34F7F /* NewApplyCarViewController.m in Sources */,
 				7EF85FC01B31BD3C009B548A /* STextView.m in Sources */,
 				7E3C56641B291A5D002CB6F4 /* MainViewController.m in Sources */,
 				7E3C56731B291B8D002CB6F4 /* HouseInfoModel.m in Sources */,
+				7EF4B7051B3518C800A34F7F /* NewApplyHouseViewController.m in Sources */,
 				7E3C566A1B291AF9002CB6F4 /* BasicInfoModel.m in Sources */,
 				7E3C563C1B290122002CB6F4 /* main.m in Sources */,
 				7E3C56761B291BA2002CB6F4 /* CarInfoModel.m in Sources */,
 				7E3C56701B291B6B002CB6F4 /* MessageListModel.m in Sources */,
+				7EF4B70E1B356DCB00A34F7F /* CheckListViewController.m in Sources */,
 				7E3C56881B291D71002CB6F4 /* ApplyListViewController.m in Sources */,
 				7EF85FBD1B315EE2009B548A /* ChangePasswordViewController.m in Sources */,
 				7E3C56791B291BBE002CB6F4 /* OtherInfoModel.m in Sources */,

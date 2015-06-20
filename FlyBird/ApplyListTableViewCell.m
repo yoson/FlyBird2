@@ -69,7 +69,7 @@
     _create_time.text = [NSString stringWithFormat:@"申请时间:%@",data.create_time];
     _number = data.borrowerphone;
     _applyId = data.id;
-    
+    _flag = data.status;
 }
 
 +(CGFloat)height{
@@ -78,8 +78,17 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+    [FlyBirdTool setKey:@"applyId" Value:_applyId];
+    if([_flag isEqualToString:@"2"]||[_flag isEqualToString:@"5"]){
+        [FlyBirdTool setKey:@"flag" Value:@"modify"];
+    }else{
+        [FlyBirdTool setKey:@"flag" Value:@"check"];
+    }
+    MainViewController *controller = [[MainViewController alloc]init];
+    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:controller animated:YES completion:nil];
+
     
-    // Configure the view for the selected state
 }
 
 @end

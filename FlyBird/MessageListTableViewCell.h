@@ -15,6 +15,7 @@
 @property(strong,nonatomic)UILabel *status;
 @property(strong,nonatomic)UILabel *create_time;
 @property(nonatomic,strong)UILabel *detail;
+@property(nonatomic)BOOL flag;
 -(void)setData:(MessageListModel *)data;
 +(CGFloat)height;
 @end

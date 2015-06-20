@@ -41,7 +41,9 @@
 
         [self addSubview:_create_time];
         [self addSubview:line2];
-        [self addSubview:_detail];
+        if(!_flag){
+            [self addSubview:_detail];
+        }
         [self addSubview:_suggest];
         [self addSubview:line1];
         [self addSubview:line];

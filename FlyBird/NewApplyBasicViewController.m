@@ -9,6 +9,8 @@
 #import "NewApplyBasicViewController.h"
 #import "FlyBirdTool.h"
 #import "STextView.h"
+#import "MainViewController.h"
+#import "NewApplyHouseViewController.h"
 
 @interface NewApplyBasicViewController (){
     NSString *_flag;
@@ -27,6 +29,21 @@
     STextView *_dianhua;
     STextView *_dizhi;
     STextView *_danwei;
+    STextView *_coName;
+    STextView *_coAge;
+    STextView *_coId;
+    STextView *_coRelationship;
+    STextView *_coSex;
+    STextView *_coTelNum;
+    STextView *_coAddress;
+    STextView *_guaName;
+    STextView *_guaAge;
+    STextView *_guaId;
+    STextView *_guaRelationship;
+    STextView *_guaSex;
+    STextView *_guaTelNum;
+    STextView *_guaAddress;
+    
 }
 
 @end
@@ -51,7 +68,6 @@
 
 -(void) addNavBar{
     UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 23, SCREEN_WIDTH, 44)];
-    //navBar.barTintColor = [UIColor colorWithHex:0xF5A64A alpha:0];
     navBar.barTintColor = YELLOW;
     UINavigationItem *item = [[UINavigationItem alloc]initWithTitle:@"基本信息(1/5)"];
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeft)];
@@ -128,11 +144,108 @@
     [_danwei setLableText:@"工作单位"];
     [_scrollView addSubview:_danwei];
     i++;
-    
+    UIView *coBorrower = [FlyBirdTool getTitleLable:CGPointMake(0, 35*i) setTitle:@"共同借款人信息"];
+    [_scrollView addSubview:coBorrower];
+    i++;
+    _coName = [[STextView alloc]initWithFrame:CGRectMake(0, 35*i, 0, 0)];
+    [_coName setLableText:@"共借人姓名"];
+    [_scrollView addSubview:_coName];
+    i++;
+    _coAge = [[STextView alloc]initWithFrame:CGRectMake(0, 35*i, 0, 0)];
+    [_coAge setLableText:@"年龄"];
+    [_scrollView addSubview:_coAge];
+    i++;
+    _coId = [[STextView alloc]initWithFrame:CGRectMake(0, 35*i, 0, 0)];
+    [_coId setLableText:@"身份证号"];
+    [_scrollView addSubview:_coId];
+    i++;
+    _coRelationship = [[STextView alloc]initWithFrame:CGRectMake(0, 35*i, 0, 0)];
+    [_coRelationship setLableText:@"与联系人关系"];
+    [_scrollView addSubview:_coRelationship];
+    i++;
+    _coSex = [[STextView alloc]initWithFrame:CGRectMake(0, 35*i, 0, 0)];
+    [_coSex setLableText:@"性别"];
+    [_coSex setFieldText:@"男、女"];
+    [_scrollView addSubview:_coSex];
+    i++;
+    _coTelNum = [[STextView alloc]initWithFrame:CGRectMake(0, 35*i, 0, 0)];
+    [_coTelNum setLableText:@"联系电话"];
+    [_scrollView addSubview:_coTelNum];
+    i++;
+    _coAddress = [[STextView alloc]initWithFrame:CGRectMake(0, 35*i, 0, 0)];
+    [_coAddress setLableText:@"居住地址"];
+    [_scrollView addSubview:_coAddress];
+    i++;
+    UIView *guaBorrower = [FlyBirdTool getTitleLable:CGPointMake(0, 35*i) setTitle:@"担保人信息"];
+    [_scrollView addSubview:guaBorrower];
+    i++;
+    _guaName = [[STextView alloc]initWithFrame:CGRectMake(0, 35*i, 0, 0)];
+    [_guaName setLableText:@"担保人姓名"];
+    [_guaName setFieldText:@"|"];
+    [_scrollView addSubview:_guaName];
+    i++;
+    _guaAge = [[STextView alloc]initWithFrame:CGRectMake(0, 35*i, 0, 0)];
+    [_guaAge setLableText:@"年龄"];
+    [_scrollView addSubview:_guaAge];
+    i++;
+    _guaId = [[STextView alloc]initWithFrame:CGRectMake(0, 35*i, 0, 0)];
+    [_guaId setLableText:@"身份证号"];
+    [_scrollView addSubview:_guaId];
+    i++;
+    _guaRelationship = [[STextView alloc]initWithFrame:CGRectMake(0, 35*i, 0, 0)];
+    [_guaRelationship setLableText:@"与联系人关系"];
+    [_scrollView addSubview:_guaRelationship];
+    i++;
+    _guaSex = [[STextView alloc]initWithFrame:CGRectMake(0, 35*i, 0, 0)];
+    [_guaSex setLableText:@"性别"];
+    [_guaSex setFieldText:@"男、女"];
+    [_scrollView addSubview:_guaSex];
+    i++;
+    _guaTelNum = [[STextView alloc]initWithFrame:CGRectMake(0, 35*i, 0, 0)];
+    [_guaTelNum setLableText:@"联系电话"];
+    [_scrollView addSubview:_guaTelNum];
+    i++;
+    _guaAddress = [[STextView alloc]initWithFrame:CGRectMake(0, 35*i, 0, 0)];
+    [_guaAddress setLableText:@"居住地址"];
+    [_scrollView addSubview:_guaAddress];
+}
+
+-(void)clickLeft{
+    MainViewController *controller = [[MainViewController alloc]init];
+    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:controller animated:YES completion:nil];
+}
+-(void)clickRight{
+    NewApplyHouseViewController *controller = [[NewApplyHouseViewController alloc]init];
+    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 -(void)queryInfo{
     
+}
+
+-(void) request:(NSInteger)status{
+//    NSString *param = [NSString stringWithFormat:@"id=%@&sid=%@&pid=%@%@&borrowername=%@&loanamount=%@loanuse=%@&repaysource=%@&avgmonthbill=%@&loanmonths=%@&creditoverview=%@&borrowerphone=%@&borrowerage=%@&borrowerid=%@&borrowermarrage=%@&borrowersex=%@&borroweraddr=%@&borrowerwork=%@&coborrowername=%@&coborrowerphone=%@&coborrowerage=%@&coborrowerid=%@&coborrowerrelation=%@&coborrowersex=%@&coborroweraddr=%@&guarantorname=%@&guarantorphone=%@&guarantorage=%@&guarantorid=%@&guarantorrelation=%@&guarantorsex=%@&guarantoraddr=%@&firstverify=%@&secondverify=%@&geoinfo=%@&",applyid,sid,pid,[FlyBirdTool getTSAndTK],_xingming.field.text,_eduT.text,_yongtuT.text,_laiyuanT.text,_liushuiT.text,_qixianT.text,_zhengxinT.text,_jdianhuaT.text,_jnianlingT.text,_jidT.text,_jhunyinT.text,_jxingbieT.text,_jzhuzhiT.text,_jdanweiT.text,_gxingmingT.text,_gdianhuaT.text,_gnianlingT.text,_gidT.text,_gguanxiT.text,_gxingbieT.text,_gdizhiT.text,_dxingmingT.text,_ddianhuaT.text,_dnianlingT.text,_didT.text,_dguanxiT.text,_dxingbieT.text,_ddizhiT.text];
+//    NSLog(@"parma:%@",param);
+//    HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
+//        if(error == nil){
+//            NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+//            NSLog(@"%@",text);
+//            NSArray * array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+//            [_itemList removeAllObjects];
+//            for(int i=0;i<array.count;i++){
+//                ApplyListModel *model = [[ApplyListModel alloc]init];
+//                [model parseResponse:array[i]];
+//                [_itemList addObject:model];
+//            }
+//            [self loadTableView];
+//        }else{
+//            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"内部服务器错误，请检查网络连接" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+//            [alert show];
+//        }
+//    };
+//    [FlyBirdTool httpPost:@"api/querylist/" param:param completeHander:handler];
 }
 
 @end

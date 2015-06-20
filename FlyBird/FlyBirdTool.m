@@ -83,7 +83,11 @@
     
     [urlReq addValue:@"image/jpeg" forHTTPHeaderField:@"Content-Type"];
     [urlReq addValue:@"text/html" forHTTPHeaderField:@"Accept"];
-    [urlReq addValue:[param objectForKey:@"remark"]  forHTTPHeaderField:@"remark"];
+    NSString *remark = [param objectForKey:@"remark"];
+    [urlReq addValue: [remark stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] forHTTPHeaderField:@"remark"];
+    [urlReq addValue:[param objectForKey:@"type"] forHTTPHeaderField:@"type"];
+    [urlReq addValue:[param objectForKey:@"detail"] forHTTPHeaderField:@"detail"];
+    
     [urlReq setCachePolicy:NSURLRequestReloadIgnoringCacheData];
     [urlReq setTimeoutInterval:20];
     NSURLSessionUploadTask *upLoadTask = [session uploadTaskWithRequest:urlReq fromData:data completionHandler:handler];
@@ -105,7 +109,7 @@
 +(UILabel*)getTitleLable:(CGPoint)frame setTitle:(NSString *)title{
     UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(0, frame.y, SCREEN_WIDTH, 35)];
     lable.backgroundColor = GRAY;
-    lable.alpha = 0.2;
+    lable.alpha = 0.4;
     lable.text = [NSString stringWithFormat:@"  %@",title];
     lable.font = [UIFont systemFontOfSize:14 weight:200];
     return lable;

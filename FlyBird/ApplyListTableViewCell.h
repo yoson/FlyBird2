@@ -18,6 +18,8 @@
 @property(strong,nonatomic)UIButton *borrowerphone;
 @property(nonatomic,strong)NSString *number;
 @property(nonatomic,strong)NSString *applyId;
+@property(nonatomic,strong)NSString *flag;
+@property(nonatomic,weak)UIViewController * controller;
 -(void)setData:(ApplyListModel *)data;
 +(CGFloat)height;
 @end
