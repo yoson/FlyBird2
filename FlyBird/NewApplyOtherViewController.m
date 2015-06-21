@@ -12,6 +12,7 @@
 #import "OtherInfoModel.h"
 #import "NewApplyCarViewController.h"
 #import "UIImageView+WebCache.h"
+#import "NewApplyRemarkViewController.h"
 
 @interface NewApplyOtherViewController ()<UITextViewDelegate>{
     NSString *_flag;
@@ -45,8 +46,9 @@
 - (void)addHouseInfo{
     UIView *info = [FlyBirdTool getTitleLable:CGPointMake(0, 0) setTitle:@"其他抵押物说明"];
     [_scrollView addSubview:info];
-    _otherInfo = [[UITextView alloc]initWithFrame:CGRectMake(0, 35, 0, 0)];
+    _otherInfo = [[UITextView alloc]initWithFrame:CGRectMake(0, 35, SCREEN_WIDTH, 100)];
     _otherInfo.delegate=self;
+    //_otherInfo.backgroundColor = YELLOW;
     [_scrollView addSubview:_otherInfo];
     UIView *jiafang = [FlyBirdTool getTitleLable:CGPointMake(0, 35+100) setTitle:@"其他抵押物照片"];
     [_scrollView addSubview:jiafang];
@@ -88,7 +90,9 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 -(void)clickRight{
-    
+    NewApplyRemarkViewController *controller = [[NewApplyRemarkViewController alloc]init];
+    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 -(void)queryInfo{
@@ -104,7 +108,8 @@
                 OtherInfoModel*model = [[OtherInfoModel alloc]init];
                 [model parseResponse:array[0]];
                 [self setData:model];
-            }
+            }else
+                [self setData:nil];
         }else{
             UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"内部服务器错误，请检查网络连接" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
             [alert show];
@@ -114,11 +119,13 @@
 }
 
 -(void)setData:(OtherInfoModel *)model{
+    if(model !=nil){
     _otherInfo.text = model.otherInfo;
     _photo1.field.text=model.photoI1;
     [_photo1.imageView sd_setImageWithURL:[NSURL URLWithString:model.photo1]];
     _photo2.field.text=model.photoI2;
     [_photo2.imageView sd_setImageWithURL:[NSURL URLWithString:model.photo2]];
+    }
     if([_flag isEqualToString:@"check"]){
         _photo1.flag = YES;
         [_photo1 setButtonNo];
