@@ -13,6 +13,8 @@
 #import "NewApplyBasicViewController.h"
 #import "NewApplyCarViewController.h"
 #import "HouseInfoModel.h"
+#import "UIImageView+WebCache.h"
+#import "NewApplyCarViewController.h"
 
 @interface NewApplyHouseViewController (){
     NSString *_flag;
@@ -177,7 +179,9 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 -(void)clickRight{
-    
+    NewApplyCarViewController *controller = [[NewApplyCarViewController alloc]init];
+    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 -(void)queryInfo{
@@ -187,18 +191,78 @@
         if(error == nil){
             NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
             NSLog(@"%@",text);
+            if(![text isEqualToString:@"[]"]){
             NSArray * array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
             
-//            BasicInfoModel*model = [[BasicInfoModel alloc]init];
-//            [model parseResponse:array[0]];
-//            [self setData:model];
+            HouseInfoModel*model = [[HouseInfoModel alloc]init];
+            [model parseResponse:array[0]];
+            [self setData:model];
+            }
         }else{
             UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"内部服务器错误，请检查网络连接" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
             [alert show];
         }
     };
     [FlyBirdTool httpPost:@"api/queryinfo/" param:param completeHander:handler];
+}
 
+-(void)setData:(HouseInfoModel *)model{
+    _address.field.text=model.location;
+    _size.field.text=model.size;
+    _mortgage.field.text=model.mortgage;
+    _perPrice.field.text=model.perPriece;
+    _totalPrice.field.text=model.totalPrice;
+    _agency.field.text=model.agency;
+    _photo1.field.text=model.photoI1;
+    [_photo1.imageView sd_setImageWithURL:[NSURL URLWithString:model.photo1]];
+    _photo2.field.text=model.photoI2;
+    [_photo2.imageView sd_setImageWithURL:[NSURL URLWithString:model.photo2]];
+    _photo3.field.text=model.photoI3;
+    [_photo3.imageView sd_setImageWithURL:[NSURL URLWithString:model.photo3]];
+    _photo4.field.text=model.photoI4;
+    [_photo4.imageView sd_setImageWithURL:[NSURL URLWithString:model.photo4]];
+    _photo5.field.text=model.photoI5;
+    [_photo5.imageView sd_setImageWithURL:[NSURL URLWithString:model.photo5]];
+    _photo6.field.text=model.photoI6;
+    [_photo6.imageView sd_setImageWithURL:[NSURL URLWithString:model.photo6]];
+    _photo7.field.text=model.photoI7;
+    [_photo7.imageView sd_setImageWithURL:[NSURL URLWithString:model.photo7]];
+    _photo8.field.text=model.photoI8;
+    [_photo8.imageView sd_setImageWithURL:[NSURL URLWithString:model.photo8]];
+    _photo9.field.text=model.photoI9;
+    [_photo9.imageView sd_setImageWithURL:[NSURL URLWithString:model.photo9]];
+    _photo9.field.text=model.photoI10;
+    [_photo10.imageView sd_setImageWithURL:[NSURL URLWithString:model.photo10]];
+    if([_flag isEqualToString:@"check"]){
+        _address.flag = YES;
+        _size.flag = YES;
+        _mortgage.flag = YES;
+        _perPrice.flag = YES;
+        _totalPrice.flag = YES;
+        _agency.flag = YES;
+        _photo1.flag = YES;
+        [_photo1 setButtonNo];
+        _photo2.flag = YES;
+        [_photo2 setButtonNo];
+        _photo3.flag = YES;
+        [_photo3 setButtonNo];
+        _photo4.flag = YES;
+        [_photo4 setButtonNo];
+        _photo5.flag = YES;
+        [_photo5 setButtonNo];
+        _photo6.flag = YES;
+        [_photo6 setButtonNo];
+        _photo7.flag = YES;
+        [_photo7 setButtonNo];
+        _photo8.flag = YES;
+        [_photo8 setButtonNo];
+        _photo9.flag = YES;
+        [_photo9 setButtonNo];
+        _photo10.flag = YES;
+        [_photo10 setButtonNo];
+        
+    }
+    
 }
 
 @end

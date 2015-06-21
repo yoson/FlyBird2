@@ -25,5 +25,15 @@
 @property(nonatomic,strong)NSString *photo8;
 @property(nonatomic,strong)NSString *photo9;
 @property(nonatomic,strong)NSString *photo10;
+@property(nonatomic,strong)NSString *photoI1;
+@property(nonatomic,strong)NSString *photoI2;
+@property(nonatomic,strong)NSString *photoI3;
+@property(nonatomic,strong)NSString *photoI4;
+@property(nonatomic,strong)NSString *photoI5;
+@property(nonatomic,strong)NSString *photoI6;
+@property(nonatomic,strong)NSString *photoI7;
+@property(nonatomic,strong)NSString *photoI8;
+@property(nonatomic,strong)NSString *photoI9;
+@property(nonatomic,strong)NSString *photoI10;
 - (void)parseResponse:(NSDictionary *)jsonDict;
 @end

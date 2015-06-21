@@ -307,8 +307,12 @@
 }
 
 -(void) request{
-    
-    NSString *param = [NSString stringWithFormat:@"id=%@&sid=%@&pid=%@%@&borrowername=%@&loanamount=%@&loanuse=%@&repaysource=%@&avgmonthbill=%@&loanmonths=%@&creditoverview=%@&borrowerphone=%@&borrowerage=%@&borrowerid=%@&borrowermarrage=%@&borrowersex=%@&borroweraddr=%@&borrowerwork=%@&coborrowername=%@&coborrowerphone=%@&coborrowerage=%@&coborrowerid=%@&coborrowerrelation=%@&coborrowersex=%@&coborroweraddr=%@&guarantorname=%@&guarantorphone=%@&guarantorage=%@&guarantorid=%@&guarantorrelation=%@&guarantorsex=%@&guarantoraddr=%@",@"",[FlyBirdTool getValue:@"userId"],[FlyBirdTool getValue:@"pId"],[FlyBirdTool getTsTK],_xingming.field.text,_edu.field.text,_yongtu.field.text,_laiyuan.field.text,_liushui.field.text,_qixian.field.text,_gaikuang.field.text,_dianhua.field.text,_nianling.field.text,_shenfenzhenghao.field.text,_hunyin.field.text,_xingbie.field.text,_dizhi.field.text,_danwei.field.text,_coName.field.text,_coAge.field.text,_coTelNum.field.text,_coId.field.text,_coRelationship.field.text,_coSex.field.text,_coAddress.field.text,_guaName.field.text,_guaAge.field.text,_guaTelNum.field.text,_guaId.field.text,_guaRelationship.field.text,_guaSex.field.text,_guaAddress.field.text];
+    NSString *applyId;
+    if([_flag isEqualToString:@"add"]){
+        applyId=@"";
+    }else
+        applyId =[FlyBirdTool getValue:@"applyId"];
+    NSString *param = [NSString stringWithFormat:@"id=%@&sid=%@&pid=%@%@&borrowername=%@&loanamount=%@&loanuse=%@&repaysource=%@&avgmonthbill=%@&loanmonths=%@&creditoverview=%@&borrowerphone=%@&borrowerage=%@&borrowerid=%@&borrowermarrage=%@&borrowersex=%@&borroweraddr=%@&borrowerwork=%@&coborrowername=%@&coborrowerphone=%@&coborrowerage=%@&coborrowerid=%@&coborrowerrelation=%@&coborrowersex=%@&coborroweraddr=%@&guarantorname=%@&guarantorphone=%@&guarantorage=%@&guarantorid=%@&guarantorrelation=%@&guarantorsex=%@&guarantoraddr=%@",applyId,[FlyBirdTool getValue:@"userId"],[FlyBirdTool getValue:@"pId"],[FlyBirdTool getTsTK],_xingming.field.text,_edu.field.text,_yongtu.field.text,_laiyuan.field.text,_liushui.field.text,_qixian.field.text,_gaikuang.field.text,_dianhua.field.text,_nianling.field.text,_shenfenzhenghao.field.text,_hunyin.field.text,_xingbie.field.text,_dizhi.field.text,_danwei.field.text,_coName.field.text,_coAge.field.text,_coTelNum.field.text,_coId.field.text,_coRelationship.field.text,_coSex.field.text,_coAddress.field.text,_guaName.field.text,_guaAge.field.text,_guaTelNum.field.text,_guaId.field.text,_guaRelationship.field.text,_guaSex.field.text,_guaAddress.field.text];
     NSLog(@"parma:%@",param);
     HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
         if(error == nil){

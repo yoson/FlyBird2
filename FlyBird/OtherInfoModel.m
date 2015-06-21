@@ -9,5 +9,26 @@
 #import "OtherInfoModel.h"
 
 @implementation OtherInfoModel
-
+-(void)parseResponse:(NSDictionary *)jsonDict{
+    id obj = [jsonDict objectForKey:@"otherimgs"];
+    if(obj !=nil && [obj isKindOfClass:[NSString class]]){
+        self.photo1 = obj;
+    }
+    obj = [jsonDict objectForKey:@"otherimgs2"];
+    if(obj !=nil && [obj isKindOfClass:[NSString class]]){
+        self.photo2 = obj;
+    }
+    obj = [jsonDict objectForKey:@"otherimgsinfo"];
+    if(obj !=nil && [obj isKindOfClass:[NSString class]]){
+        self.photoI1 = obj;
+    }
+    obj = [jsonDict objectForKey:@"otherimgs2info"];
+    if(obj !=nil && [obj isKindOfClass:[NSString class]]){
+        self.photoI2 = obj;
+    }
+    obj = [jsonDict objectForKey:@"info"];
+    if(obj !=nil && [obj isKindOfClass:[NSString class]]){
+        self.otherInfo = obj;
+    }
+}
 @end

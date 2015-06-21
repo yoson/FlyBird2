@@ -30,6 +30,8 @@
 		7E3C569B1B2C8C00002CB6F4 /* ApplyListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C56991B2C8C00002CB6F4 /* ApplyListTableViewCell.m */; };
 		7E3C569F1B2F2D7A002CB6F4 /* MessageListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3C569E1B2F2D7A002CB6F4 /* MessageListTableViewCell.m */; };
 		7E6B8A8E1B3310C600317920 /* NewApplyBasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E6B8A8D1B3310C600317920 /* NewApplyBasicViewController.m */; };
+		7EB0B1CF1B37014700B9AECF /* NewApplyOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0B1CE1B37014700B9AECF /* NewApplyOtherViewController.m */; };
+		7EB0B1D21B37016100B9AECF /* NewApplyRemarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0B1D11B37016100B9AECF /* NewApplyRemarkViewController.m */; };
 		7EF4B7051B3518C800A34F7F /* NewApplyHouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF4B7041B3518C800A34F7F /* NewApplyHouseViewController.m */; };
 		7EF4B7081B351F7C00A34F7F /* PhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF4B7071B351F7C00A34F7F /* PhotoView.m */; };
 		7EF4B70B1B3562DA00A34F7F /* NewApplyCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF4B70A1B3562DA00A34F7F /* NewApplyCarViewController.m */; };
@@ -96,6 +98,10 @@
 		7E3C569E1B2F2D7A002CB6F4 /* MessageListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListTableViewCell.m; sourceTree = "<group>"; };
 		7E6B8A8C1B3310C600317920 /* NewApplyBasicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewApplyBasicViewController.h; sourceTree = "<group>"; };
 		7E6B8A8D1B3310C600317920 /* NewApplyBasicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewApplyBasicViewController.m; sourceTree = "<group>"; };
+		7EB0B1CD1B37014700B9AECF /* NewApplyOtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewApplyOtherViewController.h; sourceTree = "<group>"; };
+		7EB0B1CE1B37014700B9AECF /* NewApplyOtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewApplyOtherViewController.m; sourceTree = "<group>"; };
+		7EB0B1D01B37016100B9AECF /* NewApplyRemarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewApplyRemarkViewController.h; sourceTree = "<group>"; };
+		7EB0B1D11B37016100B9AECF /* NewApplyRemarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewApplyRemarkViewController.m; sourceTree = "<group>"; };
 		7EF4B7031B3518C800A34F7F /* NewApplyHouseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewApplyHouseViewController.h; sourceTree = "<group>"; };
 		7EF4B7041B3518C800A34F7F /* NewApplyHouseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewApplyHouseViewController.m; sourceTree = "<group>"; };
 		7EF4B7061B351F7C00A34F7F /* PhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoView.h; sourceTree = "<group>"; };
@@ -258,6 +264,10 @@
 				7EF4B7041B3518C800A34F7F /* NewApplyHouseViewController.m */,
 				7EF4B7091B3562DA00A34F7F /* NewApplyCarViewController.h */,
 				7EF4B70A1B3562DA00A34F7F /* NewApplyCarViewController.m */,
+				7EB0B1CD1B37014700B9AECF /* NewApplyOtherViewController.h */,
+				7EB0B1CE1B37014700B9AECF /* NewApplyOtherViewController.m */,
+				7EB0B1D01B37016100B9AECF /* NewApplyRemarkViewController.h */,
+				7EB0B1D11B37016100B9AECF /* NewApplyRemarkViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -422,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E3C566D1B291B54002CB6F4 /* ApplyListModel.m in Sources */,
+				7EB0B1D21B37016100B9AECF /* NewApplyRemarkViewController.m in Sources */,
 				7EF4B7081B351F7C00A34F7F /* PhotoView.m in Sources */,
 				7E6B8A8E1B3310C600317920 /* NewApplyBasicViewController.m in Sources */,
 				7E3C56851B291D40002CB6F4 /* MineViewController.m in Sources */,
@@ -436,6 +447,7 @@
 				7EF85FC01B31BD3C009B548A /* STextView.m in Sources */,
 				7E3C56641B291A5D002CB6F4 /* MainViewController.m in Sources */,
 				7E3C56731B291B8D002CB6F4 /* HouseInfoModel.m in Sources */,
+				7EB0B1CF1B37014700B9AECF /* NewApplyOtherViewController.m in Sources */,
 				7EF4B7051B3518C800A34F7F /* NewApplyHouseViewController.m in Sources */,
 				7E3C566A1B291AF9002CB6F4 /* BasicInfoModel.m in Sources */,
 				7E3C563C1B290122002CB6F4 /* main.m in Sources */,

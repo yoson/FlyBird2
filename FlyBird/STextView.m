@@ -19,6 +19,7 @@
         _lable.font = [UIFont systemFontOfSize:14];
         _field = [[UITextField alloc]initWithFrame:CGRectMake(110,1,SCREEN_WIDTH-110, height)];
         _field.font = [UIFont systemFontOfSize:12];
+        _field.placeholder = @"|";
         _field.delegate = self;
         UIView *cutLine = [FlyBirdTool getMinCutLine:CGPointMake(0, height)];
         [self addSubview:cutLine];

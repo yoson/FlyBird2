@@ -155,11 +155,28 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [urlReq addValue:[dic objectForKey:@"type"] forHTTPHeaderField:@"type"];
     [urlReq addValue:[dic objectForKey:@"detail"] forHTTPHeaderField:@"detail"];
     [urlReq addValue:[dic objectForKey:@"oid"] forHTTPHeaderField:@"oid"];
+    [urlReq addValue:@"add" forHTTPHeaderField:@"action"];
     [urlReq setCachePolicy:NSURLRequestReloadIgnoringCacheData];
     [urlReq setTimeoutInterval:20];
     [urlReq setHTTPMethod:@"POST"];
     NSURLSessionUploadTask *upLoadTask = [session uploadTaskWithRequest:urlReq fromData:_imageData completionHandler:handler];
     [upLoadTask resume];
     [MBProgressHUD showHUDAddedTo:self animated:YES];
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(void)setButtonNo{
+    [_button setEnabled:NO];
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if(_flag){
+        return NO;
+    }
+    else
+        return YES;
 }
 @end

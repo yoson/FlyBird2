@@ -18,4 +18,6 @@
 @property(nonatomic,strong)NSData *imageData;
 @property(nonatomic,strong)NSString *type;
 @property(nonatomic,strong)NSString *detail;
+@property(nonatomic)BOOL flag;
+-(void)setButtonNo;
 @end
