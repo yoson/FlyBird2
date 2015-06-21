@@ -10,6 +10,9 @@
 #import "FlyBirdTool.h"
 #import "PhotoView.h"
 #import "STextView.h"
+#import "NewApplyBasicViewController.h"
+#import "NewApplyCarViewController.h"
+#import "HouseInfoModel.h"
 
 @interface NewApplyHouseViewController (){
     NSString *_flag;
@@ -108,31 +111,31 @@
     _photo1 = [[PhotoView alloc]initWithFrame:CGRectMake(10, 8*35+10, 0, 0)];
     _photo1.controller = self;
     _photo1.type = @"houses";
-    _photo1.detail = @"houseimages";
+    _photo1.detail = @"houseimgs";
     [_scrollView addSubview:_photo1];
     _photo2 = [[PhotoView alloc]initWithFrame:CGRectMake(10+(SCREEN_WIDTH-40)/2+20, 8*35+10, 0, 0)];
     _photo2.type = @"houses";
-    _photo2.detail = @"houseimages2";
+    _photo2.detail = @"houseimgs2";
     _photo2.controller = self;
     [_scrollView addSubview:_photo2];
     _photo3 = [[PhotoView alloc]initWithFrame:CGRectMake(10, 8*35+10+(SCREEN_WIDTH-40)/2+10, 0, 0)];
     _photo3.type = @"houses";
-    _photo3.detail = @"houseimages3";
+    _photo3.detail = @"houseimgs3";
     _photo3.controller = self;
     [_scrollView addSubview:_photo3];
     _photo4 = [[PhotoView alloc]initWithFrame:CGRectMake(10+(SCREEN_WIDTH-40)/2+20, 8*35+10+(SCREEN_WIDTH-40)/2+10, 0, 0)];
     _photo4.type = @"houses";
-    _photo4.detail = @"houseimages4";
+    _photo4.detail = @"houseimgs4";
     _photo4.controller = self;
     [_scrollView addSubview:_photo4];
     _photo5 = [[PhotoView alloc]initWithFrame:CGRectMake(10, 8*35+10+((SCREEN_WIDTH-40)/2+10)*2, 0, 0)];
     _photo5.type = @"houses";
-    _photo5.detail = @"houseimages5";
+    _photo5.detail = @"houseimgs5";
     _photo5.controller = self;
     [_scrollView addSubview:_photo5];
     _photo6 = [[PhotoView alloc]initWithFrame:CGRectMake(10+(SCREEN_WIDTH-40)/2+20, 8*35+10+((SCREEN_WIDTH-40)/2+10)*2, 0, 0)];
     _photo6.type = @"houses";
-    _photo6.detail = @"houseimages6";
+    _photo6.detail = @"houseimgs6";
     _photo6.controller = self;
     [_scrollView addSubview:_photo6];
     int a = 8*35+10+((SCREEN_WIDTH-40)/2+10)*3;
@@ -167,14 +170,35 @@
 }
 
 -(void)clickLeft{
-    
+    if([[FlyBirdTool getValue:@"flag"]isEqualToString:@"add"])
+        [FlyBirdTool setKey:@"flag" Value:@"modify"];
+    NewApplyBasicViewController *controller = [[NewApplyBasicViewController alloc]init];
+    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:controller animated:YES completion:nil];
 }
 -(void)clickRight{
     
 }
 
 -(void)queryInfo{
-    
+    NSString *param = [NSString stringWithFormat:@"id=%@&type=%@%@",[FlyBirdTool getValue:@"applyId"],@"houses",[FlyBirdTool getTsTK]];
+    NSLog(@"parma:%@",param);
+    HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
+        if(error == nil){
+            NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"%@",text);
+            NSArray * array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+            
+//            BasicInfoModel*model = [[BasicInfoModel alloc]init];
+//            [model parseResponse:array[0]];
+//            [self setData:model];
+        }else{
+            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"内部服务器错误，请检查网络连接" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [alert show];
+        }
+    };
+    [FlyBirdTool httpPost:@"api/queryinfo/" param:param completeHander:handler];
+
 }
 
 @end

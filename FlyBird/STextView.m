@@ -16,7 +16,10 @@
     self = [super initWithFrame:CGRectMake(0, frame.origin.y, SCREEN_WIDTH, height)];
     if(self){
         _lable = [[UILabel alloc]initWithFrame:CGRectMake(10,0, 100, height)];
+        _lable.font = [UIFont systemFontOfSize:14];
         _field = [[UITextField alloc]initWithFrame:CGRectMake(110,1,SCREEN_WIDTH-110, height)];
+        _field.font = [UIFont systemFontOfSize:12];
+        _field.delegate = self;
         UIView *cutLine = [FlyBirdTool getMinCutLine:CGPointMake(0, height)];
         [self addSubview:cutLine];
         [self addSubview:_lable];
@@ -27,12 +30,9 @@
 
 -(void)setLableText:(NSString*)str{
     _lable.text = str;
-    _lable.font = [UIFont systemFontOfSize:14];
 }
 -(void)setFieldText:(NSString*)str{
     _field.placeholder = str;
-    _field.font = [UIFont systemFontOfSize:12];
-    _field.delegate = self;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -41,7 +41,7 @@
 }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    if(!_flag)
+    if(_flag)
         return NO;
     else
         return YES;

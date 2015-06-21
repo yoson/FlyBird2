@@ -11,6 +11,7 @@
 #import "STextView.h"
 #import "MainViewController.h"
 #import "NewApplyHouseViewController.h"
+#import "BasicInfoModel.h"
 
 @interface NewApplyBasicViewController (){
     NSString *_flag;
@@ -216,16 +217,98 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 -(void)clickRight{
-    [self request];
+    if(![_flag isEqualToString:@"check"])
+        [self request];
+    else{
+        NewApplyHouseViewController *controller = [[NewApplyHouseViewController alloc]init];
+        controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+        [self presentViewController:controller animated:YES completion:nil];
+    }
 }
-
+-(void)setData:(BasicInfoModel *)model{
+    _edu.field.text = model.loanamount;
+    _qixian.field.text = model.loanmonths;
+    _yongtu.field.text = model.loanuse;
+    _laiyuan.field.text= model.repaysource;
+    _liushui.field.text = model.avgmonthbill;
+    _gaikuang.field.text = model.creditoverview;
+    _xingming.field.text = model.borrowername;
+    _nianling.field.text = model.borrowerage;
+    _shenfenzhenghao.field.text = model.borrowerid;
+    _hunyin.field.text = model.borrowermarrage;
+    _xingbie.field.text = model.borrowersex;
+    _dianhua.field.text = model.borrowerphone;
+    _dizhi.field.text = model.borroweraddr;
+    _danwei.field.text = model.borrowerwork;
+    _coName.field.text = model.coborrowername;
+    _coAge.field.text=model.coborrowerage;
+    _coId.field.text=model.coborrowerid;
+    _coRelationship.field.text=model.coborrowerrelation;
+    _coSex.field.text=model.coborrowersex;
+    _coTelNum.field.text=model.coborrowerphone;
+    _coAddress.field.text=model.coborroweraddr;
+    _guaName.field.text=model.guarantorname;
+    _guaAge.field.text=model.guarantorage;
+    _guaId.field.text=model.guarantorid;
+    _guaRelationship.field.text=model.guarantorrelation;
+    _guaSex.field.text=model.guarantorsex;
+    _guaTelNum.field.text=model.guarantorphone;
+    _guaAddress.field.text=model.guarantoraddr;
+    if([_flag isEqualToString:@"check"]){
+        _edu.flag = YES;
+        _qixian.flag = YES;
+        _yongtu.flag = YES;
+        _laiyuan.flag = YES;
+        _liushui.flag = YES;
+        _gaikuang.flag = YES;
+        _xingming.flag = YES;
+        _nianling.flag = YES;
+        _shenfenzhenghao.flag = YES;
+        _hunyin.flag = YES;
+        _xingbie.flag = YES;
+        _dianhua.flag = YES;
+        _dizhi.flag = YES;
+        _danwei.flag = YES;
+        _coName.flag = YES;
+        _coAge.flag = YES;
+        _coId.flag = YES;
+        _coRelationship.flag = YES;
+        _coSex.flag = YES;
+        _coTelNum.flag = YES;
+        _coAddress.flag = YES;
+        _guaName.flag = YES;
+        _guaAge.flag = YES;
+        _guaId.flag = YES;
+        _guaRelationship.flag = YES;
+        _guaSex.flag = YES;
+        _guaTelNum.flag = YES;
+        _guaAddress.flag = YES;
+    }
+}
 -(void)queryInfo{
-    
+    NSString *param = [NSString stringWithFormat:@"id=%@&type=%@%@",[FlyBirdTool getValue:@"applyId"],@"orders",[FlyBirdTool getTsTK]];
+    NSLog(@"parma:%@",param);
+    HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
+        if(error == nil){
+            NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"%@",text);
+            NSArray * array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+            
+            BasicInfoModel*model = [[BasicInfoModel alloc]init];
+            [model parseResponse:array[0]];
+            [self setData:model];
+        }else{
+            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"内部服务器错误，请检查网络连接" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [alert show];
+        }
+    };
+    [FlyBirdTool httpPost:@"api/queryinfo/" param:param completeHander:handler];
+
 }
 
 -(void) request{
     
-    NSString *param = [NSString stringWithFormat:@"id=%@&sid=%@&pid=%@%@&borrowername=%@&loanamount=%@loanuse=%@&repaysource=%@&avgmonthbill=%@&loanmonths=%@&creditoverview=%@&borrowerphone=%@&borrowerage=%@&borrowerid=%@&borrowermarrage=%@&borrowersex=%@&borroweraddr=%@&borrowerwork=%@&coborrowername=%@&coborrowerphone=%@&coborrowerage=%@&coborrowerid=%@&coborrowerrelation=%@&coborrowersex=%@&coborroweraddr=%@&guarantorname=%@&guarantorphone=%@&guarantorage=%@&guarantorid=%@&guarantorrelation=%@&guarantorsex=%@&guarantoraddr=%@",@"",[FlyBirdTool getValue:@"userId"],[FlyBirdTool getValue:@"pId"],[FlyBirdTool getTsTK],_xingming.field.text,_edu.field.text,_yongtu.field.text,_laiyuan.field.text,_liushui.field.text,_qixian.field.text,_gaikuang.field.text,_dianhua.field.text,_nianling.field.text,_shenfenzhenghao.field.text,_hunyin.field.text,_xingbie.field.text,_dizhi.field.text,_danwei.field.text,_coName.field.text,_coAge.field.text,_coTelNum.field.text,_coId.field.text,_coRelationship.field.text,_coSex.field.text,_coAddress.field.text,_guaName.field.text,_guaAge.field.text,_guaTelNum.field.text,_guaId.field.text,_guaRelationship.field.text,_guaSex.field.text,_guaAddress.field.text];
+    NSString *param = [NSString stringWithFormat:@"id=%@&sid=%@&pid=%@%@&borrowername=%@&loanamount=%@&loanuse=%@&repaysource=%@&avgmonthbill=%@&loanmonths=%@&creditoverview=%@&borrowerphone=%@&borrowerage=%@&borrowerid=%@&borrowermarrage=%@&borrowersex=%@&borroweraddr=%@&borrowerwork=%@&coborrowername=%@&coborrowerphone=%@&coborrowerage=%@&coborrowerid=%@&coborrowerrelation=%@&coborrowersex=%@&coborroweraddr=%@&guarantorname=%@&guarantorphone=%@&guarantorage=%@&guarantorid=%@&guarantorrelation=%@&guarantorsex=%@&guarantoraddr=%@",@"",[FlyBirdTool getValue:@"userId"],[FlyBirdTool getValue:@"pId"],[FlyBirdTool getTsTK],_xingming.field.text,_edu.field.text,_yongtu.field.text,_laiyuan.field.text,_liushui.field.text,_qixian.field.text,_gaikuang.field.text,_dianhua.field.text,_nianling.field.text,_shenfenzhenghao.field.text,_hunyin.field.text,_xingbie.field.text,_dizhi.field.text,_danwei.field.text,_coName.field.text,_coAge.field.text,_coTelNum.field.text,_coId.field.text,_coRelationship.field.text,_coSex.field.text,_coAddress.field.text,_guaName.field.text,_guaAge.field.text,_guaTelNum.field.text,_guaId.field.text,_guaRelationship.field.text,_guaSex.field.text,_guaAddress.field.text];
     NSLog(@"parma:%@",param);
     HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
         if(error == nil){
@@ -234,6 +317,7 @@
             NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
             if([[[dic objectForKey:@"res"] stringValue] isEqualToString:@"200"]){
                 [FlyBirdTool setKey:@"applyId" Value:[dic objectForKey:@"id"]];
+                [FlyBirdTool setKey:@"flag" Value:@"modify"];
                 NewApplyHouseViewController *controller = [[NewApplyHouseViewController alloc]init];
                 controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
                 [self presentViewController:controller animated:YES completion:nil];

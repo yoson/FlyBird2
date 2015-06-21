@@ -12,6 +12,7 @@
 #import "MessageListModel.h"
 #import "ODRefreshControl.h"
 #import "MainViewController.h"
+#import "NewApplyBasicViewController.h"
 
 @interface CheckListViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSMutableArray *_itemList;
@@ -123,12 +124,9 @@
 }
 
 -(void)clickRight{
-//    if(newPassTwo.field.text !=nil &&[newPassTwo.field.text isEqualToString:newPassOne.field.text]){
-//        NSString *param = [NSString stringWithFormat:@"id=%@%@&opasswd=%@&npasswd=%@",[FlyBirdTool getValue:@"id"],[FlyBirdTool getTsTK],[FlyBirdTool md5:oldPass.field.text],newPassOne.field.text];
-//    }else{
-//        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"两次新密码输入不一致，请重新输入" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-//        [alert show];
-//    }
+    NewApplyBasicViewController *controller = [[NewApplyBasicViewController alloc]init];
+    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end

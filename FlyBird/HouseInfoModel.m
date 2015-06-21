@@ -9,5 +9,7 @@
 #import "HouseInfoModel.h"
 
 @implementation HouseInfoModel
-
+- (void)parseResponse:(NSDictionary *)jsonDict{
+    
+}
 @end

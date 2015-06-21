@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
-@interface PhotoView : UIView<UITextFieldDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate>
+@interface PhotoView : UIView<UITextFieldDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,MBProgressHUDDelegate>
 @property(nonatomic,strong) UIImageView *imageView;
 @property(nonatomic,strong) UITextField *field;
 @property(nonatomic,weak) UIViewController *controller;
+//@property(nonatomic,weak) UIImagePickerController *pickerImage;
 @property(nonatomic,strong)UIButton *button;
 @property(nonatomic,strong)NSData *imageData;
 @property(nonatomic,strong)NSString *type;

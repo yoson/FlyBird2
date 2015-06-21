@@ -1,14 +1,17 @@
 PODS:
+  - MBProgressHUD (0.9.1)
   - ODRefreshControl (1.1.0)
   - SDWebImage (3.7.2):
     - SDWebImage/Core (= 3.7.2)
   - SDWebImage/Core (3.7.2)
 
 DEPENDENCIES:
+  - MBProgressHUD (~> 0.9.1)
   - ODRefreshControl
   - SDWebImage (~> 3.7)
 
 SPEC CHECKSUMS:
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   ODRefreshControl: 4c4c413bf70d2ea0c02a28ac0a0b3b4bf4dbfdea
   SDWebImage: 71b7cdc1d1721d6a82ed62889030225f2c249e29
 

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ODRefreshControl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>207D6322ED9EF72FAC0675CB</key>
+		<key>340651021973F4EF4C4E6C3E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7443D8DF3D5BD346B8211CCE</key>
+		<key>750837D916C1CCD6737D027B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B8FC9C4EA3A49A72D76608F9</key>
+		<key>A038514C1022141E6140B8ED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B89DA39AEB8FB368C7D8CFE1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

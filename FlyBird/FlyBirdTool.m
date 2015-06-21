@@ -75,25 +75,6 @@
     NSURLSessionDataTask *dataTask =[session dataTaskWithRequest:urlReq completionHandler:handler];
     [dataTask resume];
 }
-+(void)submitImg:(NSString *)url pic:(NSData *)data param:(NSDictionary *)param completeHander:(HandlerBlock)handler{
-    NSURLSessionConfiguration *defaultConf = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:defaultConf delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-    NSURL *nsUrl = [FlyBirdTool stringToUrl:url];
-    NSMutableURLRequest *urlReq = [NSMutableURLRequest requestWithURL:nsUrl];
-    
-    [urlReq addValue:@"image/jpeg" forHTTPHeaderField:@"Content-Type"];
-    [urlReq addValue:@"text/html" forHTTPHeaderField:@"Accept"];
-    NSString *remark = [param objectForKey:@"remark"];
-    [urlReq addValue: [remark stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] forHTTPHeaderField:@"remark"];
-    [urlReq addValue:[param objectForKey:@"type"] forHTTPHeaderField:@"type"];
-    [urlReq addValue:[param objectForKey:@"detail"] forHTTPHeaderField:@"detail"];
-    
-    [urlReq setCachePolicy:NSURLRequestReloadIgnoringCacheData];
-    [urlReq setTimeoutInterval:20];
-    NSURLSessionUploadTask *upLoadTask = [session uploadTaskWithRequest:urlReq fromData:data completionHandler:handler];
-    [upLoadTask resume];
-}
-
 +(UIView*)getMaxCutLine:(CGPoint)frame{
     UIView *_view = [[UIView alloc]initWithFrame:CGRectMake(frame.x, frame.y, SCREEN_WIDTH, 10)];
     _view.backgroundColor = GRAY;

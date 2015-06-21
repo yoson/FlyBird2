@@ -9,6 +9,7 @@
 #import "PhotoView.h"
 #import "FlyBirdTool.h"
 
+
 @implementation PhotoView
 
 -(id)initWithFrame:(CGRect)frame{
@@ -71,7 +72,8 @@
     }
     pickerImage.delegate = self;
     pickerImage.allowsEditing = NO;
-    [self.controller presentModalViewController:pickerImage animated:YES];
+    //[self.controller presentModalViewController:pickerImage animated:YES];
+    [self.controller presentViewController:pickerImage animated:YES completion:nil];
 }
 
 - (void) addOfCamera
@@ -81,7 +83,7 @@
     picker.delegate = self;
     picker.allowsEditing = NO;//设置可编辑
     picker.sourceType = sourceType;
-    [self.controller presentModalViewController:picker animated:YES];//进入照相界面
+    [self.controller presentViewController:picker animated:YES completion:nil];
 }
 
 -(void)cancel{
@@ -123,25 +125,41 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
 }
 
 - (void)upload{
-//    NSString *param = [NSString stringWithFormat:@"id=%@&status=%ld%@",[FlyBirdTool getValue:@"userId"],status,[FlyBirdTool getTsTK]];
-//    NSLog(@"parma:%@",param);
-//    HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
-//        if(error == nil){
-//            NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-//            NSLog(@"%@",text);
-//            NSArray * array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
-//            [_itemList removeAllObjects];
-//            for(int i=0;i<array.count;i++){
-//                ApplyListModel *model = [[ApplyListModel alloc]init];
-//                [model parseResponse:array[i]];
-//                [_itemList addObject:model];
-//            }
-//            [self loadTableView];
-//        }else{
-//            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"内部服务器错误，请检查网络连接" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-//            [alert show];
-//        }
-//    };
-//    [FlyBirdTool httpPost:@"api/querylist/" param:param completeHander:handler];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    [dic setObject:[FlyBirdTool getValue:@"applyId"] forKey:@"oid"];
+    [dic setObject:_type forKey:@"type"];
+    [dic setObject:_detail forKey:@"detail"];
+    [dic setObject:_field.text forKey:@"remark"];
+    HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if(error == nil){
+            NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"%@",text);
+            NSDictionary* dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+            [MBProgressHUD hideHUDForView:self animated:YES];
+        }else{
+            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"内部服务器错误，请检查网络连接" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [alert show];
+        }
+        [MBProgressHUD hideHUDForView:self animated:YES];
+    };
+    NSURLSessionConfiguration *defaultConf = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:defaultConf delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    NSURL *nsUrl = [FlyBirdTool stringToUrl:@"img/submitimg/"];
+    NSMutableURLRequest *urlReq = [NSMutableURLRequest requestWithURL:nsUrl];
+    
+    [urlReq addValue:@"image/jpeg" forHTTPHeaderField:@"Content-Type"];
+    [urlReq addValue:@"text/html" forHTTPHeaderField:@"Accept"];
+    NSString *remark = [dic objectForKey:@"remark"];
+    [urlReq addValue: [remark stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] forHTTPHeaderField:@"remark"];
+    [urlReq addValue:[dic objectForKey:@"type"] forHTTPHeaderField:@"type"];
+    [urlReq addValue:[dic objectForKey:@"detail"] forHTTPHeaderField:@"detail"];
+    [urlReq addValue:[dic objectForKey:@"oid"] forHTTPHeaderField:@"oid"];
+    [urlReq setCachePolicy:NSURLRequestReloadIgnoringCacheData];
+    [urlReq setTimeoutInterval:20];
+    [urlReq setHTTPMethod:@"POST"];
+    NSURLSessionUploadTask *upLoadTask = [session uploadTaskWithRequest:urlReq fromData:_imageData completionHandler:handler];
+    [upLoadTask resume];
+    [MBProgressHUD showHUDAddedTo:self animated:YES];
 }
 @end

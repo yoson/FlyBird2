@@ -26,7 +26,6 @@ typedef void (^HandlerBlock) (NSData *data,NSURLResponse *response,NSError *erro
 +(NSString *)getValue:(NSString *)key;
 +(BOOL)setKey:(NSString *)key Value:(NSString *)value;
 +(void)httpPost:(NSString *)url param:(NSString *)param completeHander:(HandlerBlock)handler;
-+(void)submitImg:(NSString *)url  param:(NSDictionary *)param completeHander:(HandlerBlock)handler;
 +(UIView*)getMaxCutLine:(CGPoint)frame;
 +(UIView*)getMinCutLine:(CGPoint)frame;
 +(UILabel*)getTitleLable:(CGPoint)frame setTitle:(NSString*)title;
