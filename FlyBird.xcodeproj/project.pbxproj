@@ -163,6 +163,7 @@
 		7E3C56381B290122002CB6F4 /* FlyBird */ = {
 			isa = PBXGroup;
 			children = (
+				7EF4B70F1B3668D200A34F7F /* View */,
 				7E3C56671B291A97002CB6F4 /* Controller */,
 				7E3C56661B291A81002CB6F4 /* Tool */,
 				7E3C56651B291A70002CB6F4 /* Model */,
@@ -237,8 +238,6 @@
 		7E3C56671B291A97002CB6F4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7E3C569D1B2F2D7A002CB6F4 /* MessageListTableViewCell.h */,
-				7E3C569E1B2F2D7A002CB6F4 /* MessageListTableViewCell.m */,
 				7E3C56401B290122002CB6F4 /* LoginViewController.h */,
 				7E3C56411B290122002CB6F4 /* LoginViewController.m */,
 				7E3C56621B291A5D002CB6F4 /* MainViewController.h */,
@@ -251,22 +250,31 @@
 				7EF4B70C1B356DCB00A34F7F /* CheckListViewController.h */,
 				7EF4B70D1B356DCB00A34F7F /* CheckListViewController.m */,
 				7E3C56871B291D71002CB6F4 /* ApplyListViewController.m */,
-				7E3C56981B2C8C00002CB6F4 /* ApplyListTableViewCell.h */,
-				7E3C56991B2C8C00002CB6F4 /* ApplyListTableViewCell.m */,
 				7EF85FBB1B315EE2009B548A /* ChangePasswordViewController.h */,
 				7EF85FBC1B315EE2009B548A /* ChangePasswordViewController.m */,
-				7EF85FBE1B31BD3C009B548A /* STextView.h */,
-				7EF85FBF1B31BD3C009B548A /* STextView.m */,
 				7E6B8A8C1B3310C600317920 /* NewApplyBasicViewController.h */,
 				7E6B8A8D1B3310C600317920 /* NewApplyBasicViewController.m */,
 				7EF4B7031B3518C800A34F7F /* NewApplyHouseViewController.h */,
 				7EF4B7041B3518C800A34F7F /* NewApplyHouseViewController.m */,
-				7EF4B7061B351F7C00A34F7F /* PhotoView.h */,
-				7EF4B7071B351F7C00A34F7F /* PhotoView.m */,
 				7EF4B7091B3562DA00A34F7F /* NewApplyCarViewController.h */,
 				7EF4B70A1B3562DA00A34F7F /* NewApplyCarViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		7EF4B70F1B3668D200A34F7F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7E3C569D1B2F2D7A002CB6F4 /* MessageListTableViewCell.h */,
+				7E3C569E1B2F2D7A002CB6F4 /* MessageListTableViewCell.m */,
+				7E3C56981B2C8C00002CB6F4 /* ApplyListTableViewCell.h */,
+				7E3C56991B2C8C00002CB6F4 /* ApplyListTableViewCell.m */,
+				7EF85FBE1B31BD3C009B548A /* STextView.h */,
+				7EF85FBF1B31BD3C009B548A /* STextView.m */,
+				7EF4B7061B351F7C00A34F7F /* PhotoView.h */,
+				7EF4B7071B351F7C00A34F7F /* PhotoView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		F54CA050441F0C3A07BED7D2 /* Frameworks */ = {

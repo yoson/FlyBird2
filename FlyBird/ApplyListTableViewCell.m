@@ -76,20 +76,4 @@
     return 120;
 }
 
-//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-//    [super setSelected:selected animated:animated];
-//    NSLog(@"XXXXXXXXXX");
-//    [FlyBirdTool setKey:@"applyId" Value:_applyId];
-//    if([_flag isEqualToString:@"2"]||[_flag isEqualToString:@"5"]){
-//        [FlyBirdTool setKey:@"flag" Value:@"modify"];
-//    }else{
-//        [FlyBirdTool setKey:@"flag" Value:@"check"];
-//    }
-//    CheckListViewController *controller = [[CheckListViewController alloc]init];
-//    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
-//    [_controller presentViewController:controller animated:YES completion:nil];
-//
-//    
-//}
-
 @end
