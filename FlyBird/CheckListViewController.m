@@ -38,7 +38,7 @@
     //navBar.barTintColor = [UIColor colorWithHex:0xF5A64A alpha:0];
     navBar.barTintColor = YELLOW;
     UINavigationItem *item = [[UINavigationItem alloc]initWithTitle:@"审核纪录"];
-    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"< 返回" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeft)];
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeft)];
     leftButton.tintColor = [UIColor blackColor];
     [item setLeftBarButtonItem:leftButton animated:YES];
     NSString *action= @"修改订单";

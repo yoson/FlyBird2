@@ -36,7 +36,25 @@
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:YELLOW} forState:UIControlStateSelected];
     [self addNavBar];
     _itemList = [[NSMutableArray alloc]init];
+    [self getNewMessageNum];
     [self request];
+}
+-(void)getNewMessageNum{
+    NSString * param = [NSString stringWithFormat:@"id=%@%@&lts=%@",[FlyBirdTool getValue:@"userId"],[FlyBirdTool getTsTK],[FlyBirdTool getValue:@"ts"]];
+    NSLog(@"parma:%@",param);
+    HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
+        if(error == nil){
+            NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"%@",text);
+            NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+            if(![[dic objectForKey:@"msgcnt"] isEqualToString:@"0"])
+                self.tabBarItem.badgeValue = [dic objectForKey:@"msgcnt"];
+        }else{
+            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"内部服务器错误，请检查网络连接" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [alert show];
+        }
+    };
+    [FlyBirdTool httpPost:@"api/newnews/" param:param completeHander:handler];
 }
 
 -(void) addNavBar{

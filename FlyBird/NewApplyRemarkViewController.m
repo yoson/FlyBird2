@@ -43,22 +43,26 @@
     [self addPhoto];
 }
 - (void)addHouseInfo{
-    UIView *info = [FlyBirdTool getTitleLable:CGPointMake(0, 0) setTitle:@"其他抵押物说明"];
+    UIView *info = [FlyBirdTool getTitleLable:CGPointMake(0, 0) setTitle:@"备注说明"];
     [_scrollView addSubview:info];
     _otherInfo = [[UITextView alloc]initWithFrame:CGRectMake(0, 35, SCREEN_WIDTH, 100)];
     _otherInfo.delegate=self;
     //_otherInfo.backgroundColor = YELLOW;
     [_scrollView addSubview:_otherInfo];
-    UIView *jiafang = [FlyBirdTool getTitleLable:CGPointMake(0, 35+100) setTitle:@"其他抵押物照片"];
+    UIView *jiafang = [FlyBirdTool getTitleLable:CGPointMake(0, 35+100) setTitle:@"备注照片"];
     [_scrollView addSubview:jiafang];
 }
 
 -(void) addNavBar{
     UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 23, SCREEN_WIDTH, 44)];
     navBar.barTintColor = YELLOW;
-    UINavigationItem *item = [[UINavigationItem alloc]initWithTitle:@"其他抵押信息(4/5)"];
+    UINavigationItem *item = [[UINavigationItem alloc]initWithTitle:@"备注信息(5/5)"];
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithTitle:@"上一步" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeft)];
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithTitle:@"下一步" style:UIBarButtonItemStylePlain target:self action:@selector(clickRight)];
+    NSString * title = @"提交";
+    if([_flag isEqualToString:@"check"]){
+        title = @"返回列表页";
+    }
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(clickRight)];
     leftButton.tintColor = [UIColor blackColor];
     rightButton.tintColor = [UIColor blackColor];
     [item setLeftBarButtonItem:leftButton animated:YES];

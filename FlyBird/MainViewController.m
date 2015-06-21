@@ -23,7 +23,8 @@
     // Do any additional setup after loading the view.
     ApplyListViewController *applyTab = [[ApplyListViewController alloc]init];
     MessageViewController *messageTab = [[MessageViewController alloc]init];
-    messageTab.tabBar.tag = 1;
+    messageTab.tabBarItem.tag = 1;
+    self.delegate = self;
     MineViewController *mineTab = [[MineViewController alloc]init];
     self.viewControllers=@[applyTab,messageTab,mineTab];
     for(UIViewController *controller in self.viewControllers){
