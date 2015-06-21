@@ -41,9 +41,7 @@
 
         [self addSubview:_create_time];
         [self addSubview:line2];
-        if(!_flag){
-            [self addSubview:_detail];
-        }
+
         [self addSubview:_suggest];
         [self addSubview:line1];
         [self addSubview:line];
@@ -57,9 +55,12 @@
 -(void)setData:(MessageListModel *)data{
     _id.text = [NSString stringWithFormat:@"审核编号:%@",data.oid];;
     _status.text = [FlyBirdTool formatStatus:data.newstatus];
-    
+
     _suggest.text = [NSString stringWithFormat:@"申请意见:%@",data.verifycomment];
     _detail.text =[NSString stringWithFormat:@"［查看详情］"];
+    if(!_flag){
+        [self addSubview:_detail];
+    }
     _create_time.text = [NSString stringWithFormat:@"申请时间:%@",data.create_time];
 
     

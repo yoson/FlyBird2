@@ -12,6 +12,7 @@
 #import "ApplyListModel.h"
 #import "ODRefreshControl.h"
 #import "NewApplyBasicViewController.h"
+#import "CheckListViewController.h"
 
 @interface ApplyListViewController ()<UITableViewDataSource,UITableViewDelegate>{
     UITableView *_tableView;
@@ -204,6 +205,19 @@ UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemI
     }
     [cell setData:_itemList[indexPath.row]];
     return  cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ApplyListModel *data = _itemList[indexPath.row];
+        [FlyBirdTool setKey:@"applyId" Value:data.id];
+        if([data.status isEqualToString:@"2"]||[data.status isEqualToString:@"5"]){
+            [FlyBirdTool setKey:@"flag" Value:@"modify"];
+        }else{
+            [FlyBirdTool setKey:@"flag" Value:@"check"];
+        }
+        CheckListViewController *controller = [[CheckListViewController alloc]init];
+        controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+        [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end

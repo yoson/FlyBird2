@@ -8,6 +8,7 @@
 
 #import "ApplyListTableViewCell.h"
 #import "FlyBirdTool.h"
+#import "CheckListViewController.h"
 
 @implementation ApplyListTableViewCell
 
@@ -19,6 +20,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if(self){
         self.backgroundColor = [UIColor whiteColor];
+        //self.backgroundColor = YELLOW;
         UIView * line = [FlyBirdTool getMaxCutLine:CGPointMake(0, 0)];
         _id = [[UILabel alloc]initWithFrame:CGRectMake(10, 15, 100, 15)];
         _id.font = [UIFont systemFontOfSize:12];
@@ -68,27 +70,26 @@
     _loanamount.text =[NSString stringWithFormat:@"申请金额:%@",data.loanamount];
     _create_time.text = [NSString stringWithFormat:@"申请时间:%@",data.create_time];
     _number = data.borrowerphone;
-    _applyId = data.id;
-    _flag = data.status;
 }
 
 +(CGFloat)height{
     return 120;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    [FlyBirdTool setKey:@"applyId" Value:_applyId];
-    if([_flag isEqualToString:@"2"]||[_flag isEqualToString:@"5"]){
-        [FlyBirdTool setKey:@"flag" Value:@"modify"];
-    }else{
-        [FlyBirdTool setKey:@"flag" Value:@"check"];
-    }
-    MainViewController *controller = [[MainViewController alloc]init];
-    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
-    [self presentViewController:controller animated:YES completion:nil];
-
-    
-}
+//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+//    [super setSelected:selected animated:animated];
+//    NSLog(@"XXXXXXXXXX");
+//    [FlyBirdTool setKey:@"applyId" Value:_applyId];
+//    if([_flag isEqualToString:@"2"]||[_flag isEqualToString:@"5"]){
+//        [FlyBirdTool setKey:@"flag" Value:@"modify"];
+//    }else{
+//        [FlyBirdTool setKey:@"flag" Value:@"check"];
+//    }
+//    CheckListViewController *controller = [[CheckListViewController alloc]init];
+//    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+//    [_controller presentViewController:controller animated:YES completion:nil];
+//
+//    
+//}
 
 @end

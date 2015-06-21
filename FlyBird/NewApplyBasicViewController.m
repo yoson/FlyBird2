@@ -216,36 +216,38 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 -(void)clickRight{
-    NewApplyHouseViewController *controller = [[NewApplyHouseViewController alloc]init];
-    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
-    [self presentViewController:controller animated:YES completion:nil];
+    [self request];
 }
 
 -(void)queryInfo{
     
 }
 
--(void) request:(NSInteger)status{
-//    NSString *param = [NSString stringWithFormat:@"id=%@&sid=%@&pid=%@%@&borrowername=%@&loanamount=%@loanuse=%@&repaysource=%@&avgmonthbill=%@&loanmonths=%@&creditoverview=%@&borrowerphone=%@&borrowerage=%@&borrowerid=%@&borrowermarrage=%@&borrowersex=%@&borroweraddr=%@&borrowerwork=%@&coborrowername=%@&coborrowerphone=%@&coborrowerage=%@&coborrowerid=%@&coborrowerrelation=%@&coborrowersex=%@&coborroweraddr=%@&guarantorname=%@&guarantorphone=%@&guarantorage=%@&guarantorid=%@&guarantorrelation=%@&guarantorsex=%@&guarantoraddr=%@&firstverify=%@&secondverify=%@&geoinfo=%@&",applyid,sid,pid,[FlyBirdTool getTSAndTK],_xingming.field.text,_eduT.text,_yongtuT.text,_laiyuanT.text,_liushuiT.text,_qixianT.text,_zhengxinT.text,_jdianhuaT.text,_jnianlingT.text,_jidT.text,_jhunyinT.text,_jxingbieT.text,_jzhuzhiT.text,_jdanweiT.text,_gxingmingT.text,_gdianhuaT.text,_gnianlingT.text,_gidT.text,_gguanxiT.text,_gxingbieT.text,_gdizhiT.text,_dxingmingT.text,_ddianhuaT.text,_dnianlingT.text,_didT.text,_dguanxiT.text,_dxingbieT.text,_ddizhiT.text];
-//    NSLog(@"parma:%@",param);
-//    HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
-//        if(error == nil){
-//            NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-//            NSLog(@"%@",text);
-//            NSArray * array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
-//            [_itemList removeAllObjects];
-//            for(int i=0;i<array.count;i++){
-//                ApplyListModel *model = [[ApplyListModel alloc]init];
-//                [model parseResponse:array[i]];
-//                [_itemList addObject:model];
-//            }
-//            [self loadTableView];
-//        }else{
-//            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"内部服务器错误，请检查网络连接" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-//            [alert show];
-//        }
-//    };
-//    [FlyBirdTool httpPost:@"api/querylist/" param:param completeHander:handler];
+-(void) request{
+    
+    NSString *param = [NSString stringWithFormat:@"id=%@&sid=%@&pid=%@%@&borrowername=%@&loanamount=%@loanuse=%@&repaysource=%@&avgmonthbill=%@&loanmonths=%@&creditoverview=%@&borrowerphone=%@&borrowerage=%@&borrowerid=%@&borrowermarrage=%@&borrowersex=%@&borroweraddr=%@&borrowerwork=%@&coborrowername=%@&coborrowerphone=%@&coborrowerage=%@&coborrowerid=%@&coborrowerrelation=%@&coborrowersex=%@&coborroweraddr=%@&guarantorname=%@&guarantorphone=%@&guarantorage=%@&guarantorid=%@&guarantorrelation=%@&guarantorsex=%@&guarantoraddr=%@",@"",[FlyBirdTool getValue:@"userId"],[FlyBirdTool getValue:@"pId"],[FlyBirdTool getTsTK],_xingming.field.text,_edu.field.text,_yongtu.field.text,_laiyuan.field.text,_liushui.field.text,_qixian.field.text,_gaikuang.field.text,_dianhua.field.text,_nianling.field.text,_shenfenzhenghao.field.text,_hunyin.field.text,_xingbie.field.text,_dizhi.field.text,_danwei.field.text,_coName.field.text,_coAge.field.text,_coTelNum.field.text,_coId.field.text,_coRelationship.field.text,_coSex.field.text,_coAddress.field.text,_guaName.field.text,_guaAge.field.text,_guaTelNum.field.text,_guaId.field.text,_guaRelationship.field.text,_guaSex.field.text,_guaAddress.field.text];
+    NSLog(@"parma:%@",param);
+    HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
+        if(error == nil){
+            NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"%@",text);
+            NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+            if([[[dic objectForKey:@"res"] stringValue] isEqualToString:@"200"]){
+                [FlyBirdTool setKey:@"applyId" Value:[dic objectForKey:@"id"]];
+                NewApplyHouseViewController *controller = [[NewApplyHouseViewController alloc]init];
+                controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+                [self presentViewController:controller animated:YES completion:nil];
+            }else{
+                UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"错误，请重新提交" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+                [alert show];
+            }
+
+        }else{
+            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"内部服务器错误，请检查网络连接" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [alert show];
+        }
+    };
+    [FlyBirdTool httpPost:@"api/submitbasic/" param:param completeHander:handler];
 }
 
 @end

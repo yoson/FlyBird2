@@ -40,4 +40,11 @@
     return YES;
 }
 
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if(!_flag)
+        return NO;
+    else
+        return YES;
+}
+
 @end

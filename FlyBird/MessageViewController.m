@@ -10,6 +10,7 @@
 #import "FlyBirdTool.h"
 #import "MessageListTableViewCell.h"
 #import "MessageListModel.h"
+#import "CheckListViewController.h"
 #import "ODRefreshControl.h"
 
 @interface MessageViewController ()<UITableViewDataSource,UITableViewDelegate>{
@@ -109,6 +110,18 @@
     }
     [cell setData:_itemList[indexPath.row]];
     return  cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    MessageListModel *data = _itemList[indexPath.row];
+    [FlyBirdTool setKey:@"applyId" Value:data.oid];
+    if([data.newstatus isEqualToString:@"2"]||[data.newstatus isEqualToString:@"5"]){
+        [FlyBirdTool setKey:@"flag" Value:@"modify"];
+    }else{
+        [FlyBirdTool setKey:@"flag" Value:@"check"];
+    }
+    CheckListViewController *controller = [[CheckListViewController alloc]init];
+    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:controller animated:YES completion:nil];
 }
 
 @end

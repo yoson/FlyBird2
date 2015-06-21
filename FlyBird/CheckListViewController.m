@@ -11,6 +11,7 @@
 #import "MessageListTableViewCell.h"
 #import "MessageListModel.h"
 #import "ODRefreshControl.h"
+#import "MainViewController.h"
 
 @interface CheckListViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSMutableArray *_itemList;
@@ -35,14 +36,24 @@
     UINavigationBar *navBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 23, SCREEN_WIDTH, 44)];
     //navBar.barTintColor = [UIColor colorWithHex:0xF5A64A alpha:0];
     navBar.barTintColor = YELLOW;
-    UINavigationItem *item = [[UINavigationItem alloc]initWithTitle:@"消息"];
+    UINavigationItem *item = [[UINavigationItem alloc]initWithTitle:@"审核纪录"];
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithTitle:@"< 返回" style:UIBarButtonItemStylePlain target:self action:@selector(clickLeft)];
+    leftButton.tintColor = [UIColor blackColor];
+    [item setLeftBarButtonItem:leftButton animated:YES];
+    NSString *action= @"修改订单";
+    if([[FlyBirdTool getValue:@"flag"] isEqualToString:@"check"]){
+        action = @"查看订单";
+    }
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithTitle:action style:UIBarButtonItemStylePlain target:self action:@selector(clickRight)];
+    rightButton.tintColor = [UIColor blackColor];
+    [item setRightBarButtonItem:rightButton animated:YES];
     [navBar pushNavigationItem:item animated:YES];
     [self.view addSubview:navBar];
 }
 
 - (void)loadTableView{
     [_tableView removeFromSuperview];
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 67, SCREEN_WIDTH, SCREEN_HEIGHT-67-49) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 67, SCREEN_WIDTH, SCREEN_HEIGHT-67) style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.separatorStyle=UITableViewCellSelectionStyleNone;
@@ -62,7 +73,7 @@
 }
 
 -(void) request{
-    NSString *param = [NSString stringWithFormat:@"id=%@%@",[FlyBirdTool getValue:@"userId"],[FlyBirdTool getTsTK]];
+    NSString *param = [NSString stringWithFormat:@"id=%@%@",[FlyBirdTool getValue:@"applyId"],[FlyBirdTool getTsTK]];
     NSLog(@"parma:%@",param);
     HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
         if(error == nil){
@@ -81,7 +92,7 @@
             [alert show];
         }
     };
-    [FlyBirdTool httpPost:@"api/newslist/" param:param completeHander:handler];
+    [FlyBirdTool httpPost:@"api/newlist/" param:param completeHander:handler];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -100,8 +111,24 @@
     if(cell == nil){
         cell = [[MessageListTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MessageCell"];
     }
+    cell.flag = YES;
     [cell setData:_itemList[indexPath.row]];
     return  cell;
+}
+
+-(void)clickLeft{
+    MainViewController *controller = [[MainViewController alloc]init];
+    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+-(void)clickRight{
+//    if(newPassTwo.field.text !=nil &&[newPassTwo.field.text isEqualToString:newPassOne.field.text]){
+//        NSString *param = [NSString stringWithFormat:@"id=%@%@&opasswd=%@&npasswd=%@",[FlyBirdTool getValue:@"id"],[FlyBirdTool getTsTK],[FlyBirdTool md5:oldPass.field.text],newPassOne.field.text];
+//    }else{
+//        UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"两次新密码输入不一致，请重新输入" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+//        [alert show];
+//    }
 }
 
 @end

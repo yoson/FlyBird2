@@ -12,6 +12,7 @@
 
 @property(nonatomic,strong) UILabel *lable;
 @property(nonatomic,strong) UITextField *field;
+@property(nonatomic)BOOL flag;
 
 -(void)setLableText:(NSString*)str;
 -(void)setFieldText:(NSString*)str;
