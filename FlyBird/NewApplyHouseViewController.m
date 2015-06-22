@@ -293,6 +293,24 @@
             NSString *city = [addressDic objectForKey:(NSString *)kABPersonAddressCityKey];
             NSString *street = [addressDic objectForKey:(NSString *)kABPersonAddressStreetKey];
             NSLog(@"%@%@%@",state,city,street);
+            NSString *info = [NSString stringWithFormat:@"%@%@%@",state,city,street];
+            NSString *param = [NSString stringWithFormat:@"id=%@&info=%@%@",[FlyBirdTool getValue:@"userId"],info,[FlyBirdTool getTsTK]];
+            NSLog(@"parma:%@",param);
+            HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
+                if(error == nil){
+                    NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+                    NSLog(@"%@",text);
+                    if(![text isEqualToString:@"[]"]){
+                        NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+                        
+                    }
+                }else{
+                    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"内部服务器错误，请检查网络连接" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+                    [alert show];
+                }
+            };
+            [FlyBirdTool httpPost:@"api/submitgeo/" param:param completeHander:handler];
+
         }
     }];
     [_locationManager stopUpdatingLocation];
