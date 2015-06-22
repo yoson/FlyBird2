@@ -8,7 +8,9 @@
 
 #import "PhotoView.h"
 #import "FlyBirdTool.h"
-
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <CoreLocation/CoreLocation.h>
+#import <AddressBook/AddressBook.h>
 
 @implementation PhotoView
 
@@ -116,6 +118,35 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [self performSelector:@selector(saveImage:)
                withObject:image
                afterDelay:0.5];
+//    NSURL *videoUrl = (NSURL *)[info objectForKey:UIImagePickerControllerReferenceURL];
+//    NSString *moviePath = [videoUrl path];
+//    
+//    if ( UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(moviePath) ) {
+//        
+//        ALAssetsLibrary *assetLibrary = [[ALAssetsLibrary alloc] init];
+//        
+//        [assetLibrary assetForURL:[info objectForKey:UIImagePickerControllerReferenceURL] resultBlock:^(ALAsset *asset) {
+//            
+//            CLLocation *currLocation = [asset valueForProperty:ALAssetPropertyLocation];
+//            NSLog(@"Location Meta: %@", currLocation);
+//            CLGeocoder * geo = [[CLGeocoder alloc]init];
+//            [geo reverseGeocodeLocation:currLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+//                if([placemarks count]>0){
+//                    CLPlacemark *place = placemarks[0];
+//                    NSDictionary *addressDic = place.addressDictionary;
+//                    NSString *state = [addressDic objectForKey:(NSString*)kABPersonAddressStateKey];
+//                    NSString *city = [addressDic objectForKey:(NSString *)kABPersonAddressCityKey];
+//                    NSString *street = [addressDic objectForKey:(NSString *)kABPersonAddressStreetKey];
+//                    NSLog(@"%@%@%@",state,city,street);
+//                }
+//            }];
+//
+//            
+//        } failureBlock:^(NSError *error) {
+//            NSLog(@"Video Date Error: %@", error);
+//        }];
+//        
+//    }
     _imageData = UIImageJPEGRepresentation(image, 0.3);
     [self upload];
 }

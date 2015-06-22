@@ -14,9 +14,12 @@
 #import "NewApplyCarViewController.h"
 #import "HouseInfoModel.h"
 #import "UIImageView+WebCache.h"
+#import <CoreLocation/CoreLocation.h>
+#import <CoreLocation/CLLocationManagerDelegate.h>
 #import "NewApplyCarViewController.h"
+#import <AddressBook/AddressBook.h>
 
-@interface NewApplyHouseViewController (){
+@interface NewApplyHouseViewController ()<CLLocationManagerDelegate>{
     NSString *_flag;
     UIScrollView *_scrollView;
     STextView *_address;
@@ -35,6 +38,7 @@
     PhotoView *_photo8;
     PhotoView *_photo9;
     PhotoView *_photo10;
+    CLLocationManager *_locationManager;
 }
 
 @end
@@ -48,6 +52,20 @@
     _flag = [FlyBirdTool getValue:@"flag"];
     if(![_flag isEqualToString:@"add"]){
         [self queryInfo];
+    }
+    _locationManager=[[CLLocationManager alloc]init];
+    if (![CLLocationManager locationServicesEnabled]) {
+        NSLog(@"定位服务当前可能尚未打开，请设置打开！");
+        return;
+    }
+    //如果没有授权则请求用户授权
+    if ([CLLocationManager authorizationStatus]==kCLAuthorizationStatusNotDetermined){
+        [_locationManager requestWhenInUseAuthorization];
+    }else if([CLLocationManager authorizationStatus]==kCLAuthorizationStatusAuthorizedWhenInUse){
+        _locationManager.delegate= self;
+        _locationManager.desiredAccuracy=kCLLocationAccuracyNearestTenMeters;
+        _locationManager.distanceFilter = 1000.0f;
+        [_locationManager startUpdatingLocation];
     }
     [self addNavBar];
     _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 67, SCREEN_WIDTH, SCREEN_HEIGHT-67)];
@@ -263,6 +281,21 @@
         
     }
     
+}
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    CLLocation * currLocation = [locations lastObject];
+    CLGeocoder * geo = [[CLGeocoder alloc]init];
+    [geo reverseGeocodeLocation:currLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        if([placemarks count]>0){
+            CLPlacemark *place = placemarks[0];
+            NSDictionary *addressDic = place.addressDictionary;
+            NSString *state = [addressDic objectForKey:(NSString*)kABPersonAddressStateKey];
+            NSString *city = [addressDic objectForKey:(NSString *)kABPersonAddressCityKey];
+            NSString *street = [addressDic objectForKey:(NSString *)kABPersonAddressStreetKey];
+            NSLog(@"%@%@%@",state,city,street);
+        }
+    }];
+    [_locationManager stopUpdatingLocation];
 }
 
 @end
