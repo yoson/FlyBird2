@@ -135,10 +135,10 @@
 - (void)setData:(NSDictionary *)dic{
     _userName.text = [NSString stringWithFormat:@"业务经理:%@",[FlyBirdTool getValue:@"nick"]];
     _cityManager.text = [NSString stringWithFormat:@"城市经理:%@",[dic objectForKey:@"nick"]];
-    _allApply.text = [NSString stringWithFormat:@"全部申请:  %@",[dic objectForKey:@"all"]];
-    _passFirst.text = [NSString stringWithFormat:@"通过初审:  %@",[dic objectForKey:@"firstfail"]];
-    _passEnd.text = [NSString stringWithFormat:@"通过终审:  %@",[dic objectForKey:@"lastfail"]];
-    _noPass.text = [NSString stringWithFormat:@"未通过:     %@",[dic objectForKey:@"suc"]];
+    _allApply.text = [NSString stringWithFormat:@"全部申请     :%@",[dic objectForKey:@"all"]];
+    _passFirst.text = [NSString stringWithFormat:@"初审未通过  :%@",[dic objectForKey:@"firstfail"]];
+    _passEnd.text = [NSString stringWithFormat:@"终审未通过   :%@",[dic objectForKey:@"lastfail"]];
+    _noPass.text = [NSString stringWithFormat:@"审核完成      :%@",[dic objectForKey:@"suc"]];
 }
 
 -(void) request{

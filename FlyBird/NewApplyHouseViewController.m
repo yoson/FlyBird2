@@ -69,7 +69,7 @@
     }
     [self addNavBar];
     _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 67, SCREEN_WIDTH, SCREEN_HEIGHT-67)];
-    _scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, 1200);
+    _scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, 1500);
     _scrollView.backgroundColor =[UIColor whiteColor];
     [self.view addSubview:_scrollView];
     [self addHouseInfo];
