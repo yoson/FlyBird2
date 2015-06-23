@@ -9,7 +9,7 @@
 #import "NewApplyRemarkViewController.h"
 #import "PhotoView.h"
 #import "FlyBirdTool.h"
-#import "OtherInfoModel.h"
+#import "RemarkInfoModel.h"
 #import "NewApplyOtherViewController.h"
 #import "UIImageView+WebCache.h"
 #import "MainViewController.h"
@@ -75,12 +75,12 @@
 -(void)addPhoto{
     _photo1 = [[PhotoView alloc]initWithFrame:CGRectMake(10, 35*2+100+10, 0, 0)];
     _photo1.controller = self;
-    _photo1.type = @"others";
-    _photo1.detail = @"otherimgs";
+    _photo1.type = @"comments";
+    _photo1.detail = @"commentimgs";
     [_scrollView addSubview:_photo1];
     _photo2 = [[PhotoView alloc]initWithFrame:CGRectMake(10+(SCREEN_WIDTH-40)/2+20, 2*35+100+10, 0, 0)];
-    _photo2.type = @"others";
-    _photo2.detail = @"otherimgs2";
+    _photo2.type = @"comments";
+    _photo2.detail = @"commentimgs2";
     _photo2.controller = self;
     [_scrollView addSubview:_photo2];
     
@@ -137,7 +137,7 @@
             if(![text isEqualToString:@"[]"]){
                 NSArray * array = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
                 
-                OtherInfoModel*model = [[OtherInfoModel alloc]init];
+                RemarkInfoModel*model = [[RemarkInfoModel alloc]init];
                 [model parseResponse:array[0]];
                 [self setData:model];
             }else
@@ -150,7 +150,7 @@
     [FlyBirdTool httpPost:@"api/queryinfo/" param:param completeHander:handler];
 }
 
--(void)setData:(OtherInfoModel *)model{
+-(void)setData:(RemarkInfoModel *)model{
     if(model !=nil){
         _otherInfo.text = model.otherInfo;
         _photo1.field.text=model.photoI1;

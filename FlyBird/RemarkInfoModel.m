@@ -10,19 +10,19 @@
 
 @implementation RemarkInfoModel
 -(void)parseResponse:(NSDictionary *)jsonDict{
-    id obj = [jsonDict objectForKey:@"otherimgs"];
+    id obj = [jsonDict objectForKey:@"commentimgs"];
     if(obj !=nil && [obj isKindOfClass:[NSString class]]){
         self.photo1 = obj;
     }
-    obj = [jsonDict objectForKey:@"otherimgs2"];
+    obj = [jsonDict objectForKey:@"commentimgs2"];
     if(obj !=nil && [obj isKindOfClass:[NSString class]]){
         self.photo2 = obj;
     }
-    obj = [jsonDict objectForKey:@"otherimgsinfo"];
+    obj = [jsonDict objectForKey:@"commentimgsinfo"];
     if(obj !=nil && [obj isKindOfClass:[NSString class]]){
         self.photoI1 = obj;
     }
-    obj = [jsonDict objectForKey:@"otherimgs2info"];
+    obj = [jsonDict objectForKey:@"commentimgs2info"];
     if(obj !=nil && [obj isKindOfClass:[NSString class]]){
         self.photoI2 = obj;
     }

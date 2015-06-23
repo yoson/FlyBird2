@@ -298,7 +298,7 @@
             NSString *street = [addressDic objectForKey:(NSString *)kABPersonAddressStreetKey];
             NSLog(@"%@%@%@",state,city,street);
             NSString *info = [NSString stringWithFormat:@"%@%@%@",state,city,street];
-            NSString *param = [NSString stringWithFormat:@"id=%@&info=%@%@",[FlyBirdTool getValue:@"userId"],info,[FlyBirdTool getTsTK]];
+            NSString *param = [NSString stringWithFormat:@"id=%@&geoinfo=%@%@",[FlyBirdTool getValue:@"applyId"],info,[FlyBirdTool getTsTK]];
             NSLog(@"parma:%@",param);
             HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
                 if(error == nil){
