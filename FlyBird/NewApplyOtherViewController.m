@@ -90,10 +90,40 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 -(void)clickRight{
-    NewApplyRemarkViewController *controller = [[NewApplyRemarkViewController alloc]init];
-    controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
-    [self presentViewController:controller animated:YES completion:nil];
+    if(![_flag isEqualToString:@"check"]){
+        [self request];
+    }else{
+        NewApplyRemarkViewController *controller = [[NewApplyRemarkViewController alloc]init];
+        controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+        [self presentViewController:controller animated:YES completion:nil];
+    }
 }
+-(void) request{
+    NSString *applyId=[FlyBirdTool getValue:@"applyId"];
+    NSString *param = [NSString stringWithFormat:@"id=%@%@&description=%@",applyId,[FlyBirdTool getTsTK],_otherInfo.text];
+    NSLog(@"parma:%@",param);
+    HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
+        if(error == nil){
+            NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"%@",text);
+            NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+            if([[[dic objectForKey:@"res"] stringValue] isEqualToString:@"200"]){
+                NewApplyRemarkViewController *controller = [[NewApplyRemarkViewController alloc]init];
+                controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+                [self presentViewController:controller animated:YES completion:nil];
+            }else{
+                UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"错误，请重新提交" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+                [alert show];
+            }
+            
+        }else{
+            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"内部服务器错误，请检查网络连接" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [alert show];
+        }
+    };
+    [FlyBirdTool httpPost:@"api/submitother/" param:param completeHander:handler];
+}
+
 
 -(void)queryInfo{
     NSString *param = [NSString stringWithFormat:@"id=%@&type=%@%@",[FlyBirdTool getValue:@"applyId"],@"others",[FlyBirdTool getTsTK]];

@@ -142,7 +142,7 @@
     _photo2.type = @"cars";
     _photo2.detail = @"carimgs2";
     _photo2.controller = self;
-    [_scrollView addSubview:_photo2];
+    [_scrollView addSubview:_photo2]; 
     _photo3 = [[PhotoView alloc]initWithFrame:CGRectMake(10, 12*35+10+(SCREEN_WIDTH-40)/2+10, 0, 0)];
     _photo3.type = @"cars";
     _photo3.detail = @"carimgs3";
@@ -188,10 +188,41 @@
     [self presentViewController:controller animated:YES completion:nil];
 }
 -(void)clickRight{
+    if(![_flag isEqualToString:@"check"]){
+        [self request];
+    }
+    else{
     NewApplyOtherViewController *controller = [[NewApplyOtherViewController alloc]init];
     controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:controller animated:YES completion:nil];
+    }
 }
+-(void) request{
+    NSString *applyId=[FlyBirdTool getValue:@"applyId"];
+    NSString *param = [NSString stringWithFormat:@"id=%@%@&carid=%@&mileage=%@&cartype=%@&fueltype=%@&carbrand=%@&emissions=%@&buytime=%@&buyprice=%@&assessedprice=%@&assessedagency=%@",applyId,[FlyBirdTool getTsTK],_carid.field.text,_mileage.field.text,_cartype.field.text,_fueltype.field.text,_carbrand.field.text,_emissions.field.text,_buytime.field.text,_buyprice.field.text,_assessedprice.field.text,_assessedagency.field.text];
+    NSLog(@"parma:%@",param);
+    HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
+        if(error == nil){
+            NSString *text = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"%@",text);
+            NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+            if([[[dic objectForKey:@"res"] stringValue] isEqualToString:@"200"]){
+                NewApplyOtherViewController *controller = [[NewApplyOtherViewController alloc]init];
+                controller.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+                [self presentViewController:controller animated:YES completion:nil];
+            }else{
+                UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"错误，请重新提交" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+                [alert show];
+            }
+            
+        }else{
+            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"内部服务器错误，请检查网络连接" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [alert show];
+        }
+    };
+    [FlyBirdTool httpPost:@"api/submitcar/" param:param completeHander:handler];
+}
+
 
 -(void)queryInfo{
     NSString *param = [NSString stringWithFormat:@"id=%@&type=%@%@",[FlyBirdTool getValue:@"applyId"],@"cars",[FlyBirdTool getTsTK]];

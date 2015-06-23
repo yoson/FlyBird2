@@ -26,7 +26,7 @@
     if(obj !=nil && [obj isKindOfClass:[NSString class]]){
         self.photoI2 = obj;
     }
-    obj = [jsonDict objectForKey:@"info"];
+    obj = [jsonDict objectForKey:@"description"];
     if(obj !=nil && [obj isKindOfClass:[NSString class]]){
         self.otherInfo = obj;
     }

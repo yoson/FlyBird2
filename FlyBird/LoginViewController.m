@@ -78,8 +78,8 @@
 
 - (void)login{
     
-//    NSString *param = [NSString stringWithFormat:@"name=%@&passwd=%@%@&token=",_userName.text,[FlyBirdTool md5:_usePwd.text],[FlyBirdTool getTsTK]];
-    NSString *param = [NSString stringWithFormat:@"name=%@&passwd=%@%@&token=",@"15810541077",[FlyBirdTool md5:@"111111"],[FlyBirdTool getTsTK]];
+    NSString *param = [NSString stringWithFormat:@"name=%@&passwd=%@%@&token=",_userName.text,[FlyBirdTool md5:_usePwd.text],[FlyBirdTool getTsTK]];
+    //NSString *param = [NSString stringWithFormat:@"name=%@&passwd=%@%@&token=",@"15810541077",[FlyBirdTool md5:@"111111"],[FlyBirdTool getTsTK]];
     NSLog(@"parma:%@",param);
     HandlerBlock handler = ^(NSData *data, NSURLResponse *response, NSError *error) {
         if(error == nil){
